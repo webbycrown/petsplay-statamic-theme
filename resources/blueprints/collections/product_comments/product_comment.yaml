@@ -1,0 +1,78 @@
+title: 'Product Comment'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+          -
+            handle: rating
+            field:
+              options:
+                -
+                  key: 1
+                  value: '1'
+                -
+                  key: 2
+                  value: '2'
+                -
+                  key: 3
+                  value: '3'
+                -
+                  key: 4
+                  value: '4'
+                -
+                  key: 5
+                  value: '5'
+              type: select
+              display: Rating
+          -
+            handle: comment
+            field:
+              type: textarea
+              display: Comment
+          -
+            handle: product_id
+            field:
+              max_items: 1
+              mode: select
+              collections:
+                - products
+              type: entries
+              display: 'Product ID'
+          -
+            handle: parent_id
+            field:
+              mode: select
+              collections:
+                - product_comments
+              type: entries
+              display: 'Parent Id'
+          -
+            handle: date_field
+            field:
+              type: date
+              display: 'Date Field'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

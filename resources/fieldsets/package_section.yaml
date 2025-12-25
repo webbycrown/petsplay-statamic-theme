@@ -1,0 +1,21 @@
+title: 'Package Section'
+fields:
+  -
+    handle: sub_title
+    field:
+      default: 'Our Packages'
+      type: text
+      display: 'Sub Title'
+  -
+    handle: collections_field
+    field:
+      max_items: 1
+      mode: select
+      type: collections
+      display: Collections
+  -
+    handle: limit
+    field:
+      default: '1'
+      type: integer
+      display: Limit

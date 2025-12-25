@@ -1,0 +1,98 @@
+title: Pricing
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+          -
+            handle: price
+            field:
+              type: text
+              display: Price
+              instructions: 'Enter only number (e.g. 39)'
+          -
+            handle: currency
+            field:
+              type: text
+              display: 'Currency Symbol'
+              default: $
+          -
+            handle: time_label
+            field:
+              type: text
+              display: 'Time Label'
+              default: 'Per Hour'
+          -
+            handle: background_image
+            field:
+              type: assets
+              display: 'Background Image'
+              max_files: 1
+              instructions: 'Optional background (for highlighted plan)'
+              container: assets
+          -
+            handle: features
+            field:
+              type: replicator
+              display: Features
+              sets:
+                main:
+                  display: Main
+                  sets:
+                    feature_item:
+                      display: Feature
+                      fields:
+                        -
+                          handle: feature_text
+                          field:
+                            type: text
+                            display: 'Feature Text'
+                        -
+                          handle: feature_type
+                          field:
+                            type: select
+                            display: 'Icon Type'
+                            options:
+                              -
+                                key: check
+                                value: Check
+                              -
+                                key: X
+                                value: X
+          -
+            handle: button_text
+            field:
+              type: text
+              display: 'Button Text'
+              default: 'Book Now'
+          -
+            handle: button_link
+            field:
+              type: link
+              display: 'Button Link'
+          -
+            handle: order_number
+            field:
+              default: '1'
+              type: integer
+              display: index
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

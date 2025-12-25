@@ -1,0 +1,82 @@
+{{ if segment_1 == 'services' }}
+<div class="appointment-section" style="background-image:url({{ theme:asset}}assets/image/service-bg-img.jpg);">
+   <div class="container">
+      <div class="row">
+         <div class="col-12">
+            <div class="appointment-wrapper">
+               <div class="appointmen-search" data-aos="zoom-in" data-aos-duration="1000">
+                  <div class="left"><i class="fa-solid fa-magnifying-glass"></i></div>
+                  <input class="form-control" type="text" id="area_name" placeholder="Search Area Name" value="{{ get:area }}">
+               </div>
+               <div class="appointmen-doctor" data-aos="zoom-in" data-aos-duration="1000">
+                  <div class="left"><i class="fa-solid fa-user-doctor"></i></div>
+                  <select class="form-select" aria-label="Default select example" id="team_select">
+                     <option selected>Select Team</option>
+                     {{ collection:teams }}
+                     <option value="{{id}}" {{ if id == { get:team } }}selected{{ /if }}>{{ title }}</option>
+                     {{ /collection:teams }}
+                  </select>
+                  <div class="right"><i class="fa-solid fa-arrow-down-long"></i></div>
+               </div>
+               <div class="appointmen-service" data-aos="zoom-in" data-aos-duration="1000">
+                  <div class="left"><i class="fa-solid fa-dog"></i></div>
+                  <select class="form-select" aria-label="Default select example" id="service_select">
+                     <option selected>Select Service</option>
+                     {{ collection:services }}
+                     <option value="{{id}}" {{ if id == { get:service } }}selected{{ /if }}>{{ title }}</option>
+                     {{ /collection:services }}
+                  </select>
+                  <div class="right"><i class="fa-solid fa-arrow-down-long"></i></div>
+               </div>
+               <div class="appointmen-book" data-aos="zoom-in" data-aos-duration="1000">
+                  <button class="form-control" id="searchBtn">Search & Book Now</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{{ /if }}
+<section class="packages-section">
+   <div class="container">
+      <div class="row">
+         <div class="col-12">
+            <div class="packages-title-content custom-title-shape" data-aos="zoom-in" data-aos-duration="1000">
+               <h2 class="sub-title text-center">{{ sub_title }}</h2>
+               <img class="sub_title_svg" src="{{ theme:asset }}assets/image/sub-title-shape.svg" alt="">
+            </div>
+            <div class="packages-wrapper">
+               {{ if collections_field == 'packages' }}
+                  {{ collection:packages as="packages" services:contains="{ get:service }" team:contains="{ get:team }" title:contains="{ get:area }" or="true" slug:contains="{ get:area }" limit="{limit}" }}
+               {{ /if }}
+               {{ if packages }}
+               {{ packages }}
+
+               <div class="packages-content text-center" data-aos="fade-up" data-aos-duration="1000" style="background-image: url({{ background_image  }} {{ url }} {{ /background_image  }});">
+                  <div class="packages-img">
+                     {{ package_image }}<img src="{{ url }}" alt="">{{ /package_image }}
+                  </div>
+                  <h3 class="packages-price">${{price}}/-</h3>
+                  <h4 class="packages-title"><a href="/shop">{{ title }}</a></h4>
+                  <p>{{ description }}</p>
+                  {{ if button_text }}
+                  <div class="packages-btn">
+                     <div class="btn-button">
+                        <a href="{{ button_link }}" class="btn btn-primary package_btn"  data-package-id="{{ id }}">{{ button_text }}</a>
+                     </div>
+                  </div>
+                  {{ /if }}
+               </div>
+
+               {{ /packages }}
+               {{ else }}
+               <p class="text-center mt-4">No packages found.</p>
+               {{ /if }}
+               {{ if collections_field == 'packages' }}
+               {{ /collection:packages }}
+               {{ /if }}
+            </div>
+         </div>
+      </div>
+   </div>
+</section>

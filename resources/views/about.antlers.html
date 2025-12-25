@@ -1,0 +1,7 @@
+{{ if show_hero_section == true }}
+{{ partial:inner-hero-section }}
+{{ /if }}
+
+{{ page_builder scope="block" }}
+  {{ partial src="page_builder/{type}" }}
+{{ /page_builder }}

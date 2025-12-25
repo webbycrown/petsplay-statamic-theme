@@ -1,0 +1,44 @@
+title: Footer
+data:
+  information_title: Information
+  information_links:
+    -
+      id: mhyrodfj
+      name: 'About Us'
+      url: /about-us
+    -
+      id: mhyrolnc
+      name: Gallery
+      url: /galleries
+    -
+      id: mhyrouiv
+      name: Team
+      url: /teams
+    -
+      id: mhyrp48n
+      name: Blog
+      url: /blogs
+    -
+      id: mhyrpb0q
+      name: 'Contact Us'
+      url: /contact-us
+  helpful_link_title: 'Helpful Links'
+  helpful_links:
+    -
+      id: mhyrmdze
+      name: Services
+      url: /services
+    -
+      id: mhyrn4g9
+      name: Wishlist
+      url: /wishlist
+    -
+      id: mhyrnbi9
+      name: Cart
+      url: /cart
+    -
+      id: mhyro4a0
+      name: Checkout
+      url: /checkout
+  newsletter_title: 'Subscribe Now'
+  copyright: 'Copyright © 2025 Design & Developed by WebbyCrown'

@@ -1,0 +1,198 @@
+title: Product
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+          -
+            handle: featured_image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Featured Image'
+          -
+            handle: gallery
+            field:
+              type: assets
+              container: assets
+              display: Gallery
+              max_files: 10
+              mode: grid
+          -
+            handle: regular_price
+            field:
+              type: float
+              display: 'Regular Price'
+          -
+            handle: sale_price
+            field:
+              type: float
+              display: 'Sale Price (Optional)'
+          -
+            handle: stock
+            field:
+              type: integer
+              display: 'Stock Quantity'
+          -
+            handle: sku
+            field:
+              type: text
+              display: 'SKU Code'
+          -
+            handle: categories
+            field:
+              mode: select
+              taxonomies:
+                - product_categories
+              type: terms
+              display: Categories
+          -
+            handle: colors
+            field:
+              mode: select
+              taxonomies:
+                - product_color
+              type: terms
+              display: Colors
+          -
+            handle: sizes
+            field:
+              type: list
+              display: sizes
+          -
+            handle: rating
+            field:
+              type: integer
+              display: Rating
+              instructions: '1–5 stars'
+              min: 1
+              max: 5
+          -
+            handle: badge
+            field:
+              type: text
+              display: 'Badge Label'
+              instructions: 'e.g. SALE, NEW, HOT'
+          -
+            handle: short_description
+            field:
+              type: textarea
+              display: 'Short Description'
+          -
+            handle: description
+            field:
+              type: bard
+              display: 'Full Description'
+              remove_empty_nodes: false
+              sets:
+                main:
+                  display: Main
+                  sets:
+                    paragraphs:
+                      display: Paragraph
+                      fields:
+                        -
+                          handle: paragraph
+                          field:
+                            type: textarea
+                            display: Text
+                    sample_lists:
+                      display: 'Sample List'
+                      fields:
+                        -
+                          handle: sample_list
+                          field:
+                            type: replicator
+                            display: 'Sample List'
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                sets:
+                                  lists:
+                                    display: Lists
+                                    fields:
+                                      -
+                                        handle: label
+                                        field:
+                                          type: text
+                                          display: Label
+                                      -
+                                        handle: list
+                                        field:
+                                          type: list
+                                          display: List
+                    paragraph_with_titles:
+                      display: 'Paragraph with Title'
+                      fields:
+                        -
+                          handle: paragraph_with_title
+                          field:
+                            type: replicator
+                            display: 'Paragraph with Title'
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    fields:
+                                      -
+                                        handle: label
+                                        field:
+                                          type: text
+                                          display: Label
+                                      -
+                                        handle: description
+                                        field:
+                                          type: textarea
+                                          display: Description
+          -
+            handle: excessive_info
+            field:
+              type: grid
+              display: 'Excessive Info'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+          -
+            handle: related_product_text
+            field:
+              type: text
+              display: 'Related Product Text'
+          -
+            handle: related_product
+            field:
+              mode: select
+              collections:
+                - products
+              type: entries
+              display: 'Related Product'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

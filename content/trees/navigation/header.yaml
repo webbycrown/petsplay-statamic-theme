@@ -1,0 +1,76 @@
+tree:
+  -
+    id: 9d9305dd-45d7-417c-9fc7-c7db2b2f83a3
+    title: Home
+    url: /
+  -
+    id: cd89558e-7e79-4ca5-95f2-990ac41bc8be
+    title: Page
+    url: 'javascript:;'
+    children:
+      -
+        id: 88c697de-74a3-4055-9d83-a37b4b75adae
+        title: 'About Us'
+        url: /about-us
+      -
+        id: a7bb4994-d754-4aa5-ac5b-dec57aae611f
+        title: 'Our Services'
+        url: /services
+      -
+        id: 6662cfa1-8fdb-49b7-a652-0cd949db57a9
+        title: 'Services Details'
+        url: /service/spa-and-grooming
+      -
+        id: 3b5eebc9-5f92-42ad-8825-8dd2aa0c5baf
+        title: 'Our Team'
+        url: /teams
+      -
+        id: 56911cb9-24e1-4501-bee4-a0cfe07aa92a
+        title: Gallery
+        url: /galleries
+      -
+        id: ba005c5c-ddfd-4722-b962-c152f1f74f23
+        title: 'Error - 404'
+        url: /404
+  -
+    id: b040538d-2f63-477d-98e9-442bde9e0d59
+    title: Blog
+    url: /blogs
+    children:
+      -
+        id: 2e469f6f-b937-402a-b3fd-535a45b39111
+        title: Blog
+        url: /blogs
+      -
+        id: 2ef81cee-2df0-419f-9898-44010bb6c906
+        title: 'Blog Details'
+        url: /blog/best-summer-activities-for-dog-owners
+  -
+    id: 79aa186b-479b-4924-9f1a-e726e98e2fd2
+    title: Shop
+    url: /shop
+    children:
+      -
+        id: 3a06d3c3-7684-42ec-8bcc-2f48ef4331bd
+        title: Shop
+        url: /shop
+      -
+        id: 0fc6c534-786f-47a5-b3a0-f34c2a39732f
+        title: 'Single Product'
+        url: /product/backpack-roller
+      -
+        id: 59a9a21b-8c90-4c8f-84ae-493375f7b4eb
+        title: 'Cart page'
+        url: /cart
+      -
+        id: c5bbca27-8fac-4969-bb6c-5fe621c9492a
+        title: Checkout
+        url: /checkout
+      -
+        id: e2b703b1-e6f0-4c6f-aa28-ff606fbfc792
+        title: Wishlist
+        url: /wishlist
+  -
+    id: 6d4d8727-fd28-43dd-8b5c-ff860d9f2f62
+    title: 'Contact Us'
+    url: /contact-us

@@ -1,0 +1,116 @@
+title: Service
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+          -
+            handle: featured_image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Featured Image'
+          -
+            handle: icon
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Icon
+          -
+            handle: short_description
+            field:
+              type: textarea
+              display: 'Short Description'
+          -
+            handle: content
+            field:
+              remove_empty_nodes: false
+              type: bard
+              display: 'Service Content'
+              sets:
+                main:
+                  display: Main
+                  sets:
+                    paragraphs:
+                      display: Paragraph
+                      fields:
+                        -
+                          handle: paragraph
+                          field:
+                            type: textarea
+                            display: Text
+                    list_items:
+                      display: 'List Items'
+                      fields:
+                        -
+                          handle: items
+                          field:
+                            type: list
+                            display: Items
+                    images:
+                      display: Images
+                      fields:
+                        -
+                          handle: image
+                          field:
+                            max_files: 2
+                            container: assets
+                            type: assets
+                            display: Image
+                    frequently_asked_questions:
+                      display: 'Frequently Asked Questions'
+                      fields:
+                        -
+                          handle: faq_title
+                          field:
+                            type: text
+                            display: 'FAQ Title'
+                        -
+                          handle: paragraph
+                          field:
+                            type: textarea
+                            display: Paragraph
+                        -
+                          handle: faq_items
+                          field:
+                            type: replicator
+                            display: 'FAQ Items'
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                sets:
+                                  question_and_answer:
+                                    display: 'Question and Answer'
+                                    fields:
+                                      -
+                                        handle: question
+                                        field:
+                                          type: text
+                                          display: Question
+                                      -
+                                        handle: answer
+                                        field:
+                                          type: textarea
+                                          display: Answer
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

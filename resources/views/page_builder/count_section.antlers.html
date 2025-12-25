@@ -1,0 +1,23 @@
+<section class="count-section" style="background-image:url({{theme:asset}}assets/image/choose-bg.png);">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="main-count-box">
+							{{ count_boxes }}
+							<div class="count-box text-center">
+								{{ icon }}<img src="{{url}}" alt="">{{ /icon }}
+								<h3> 
+									{{ if number | is_numeric }}
+									<span class="counter">{{ number }}</span><span>{{ plus_sign }}</span>
+									{{ else }}
+									{{ number }}
+									{{ /if }}
+								</h3>
+								<p>{{ label }}</p>
+							</div>
+							{{ /count_boxes }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>

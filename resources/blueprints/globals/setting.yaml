@@ -1,0 +1,241 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: favicon
+            field:
+              max_files: 1
+              min_files: 1
+              container: assets
+              type: assets
+              display: Favicon
+          -
+            handle: logo
+            field:
+              max_files: 1
+              min_files: 1
+              container: assets
+              type: assets
+              display: Logo
+          -
+            handle: inner_banner_image
+            field:
+              max_files: 1
+              min_files: 1
+              container: assets
+              type: assets
+              display: 'Inner Banner Image'
+              validate:
+                - required
+          -
+            import: social_section
+          -
+            handle: contact_info
+            field:
+              type: grid
+              display: 'Contact Info'
+              add_row: 'Add Contact Item'
+              fields:
+                -
+                  handle: icon
+                  field:
+                    type: text
+                    display: 'Icon Class'
+                    instructions: 'Example: fa-solid fa-phone'
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                    instructions: 'Example: Call Us'
+                -
+                  handle: url
+                  field:
+                    type: link
+                    display: 'Link (optional)'
+                    instructions: 'Phone, map link, etc.'
+                -
+                  handle: value
+                  field:
+                    type: text
+                    display: 'Display Text'
+                    instructions: 'Example: +91 123 456 789'
+          -
+            handle: loaders
+            field:
+              type: group
+              display: Loaders
+              fields:
+                -
+                  handle: loader_logo
+                  field:
+                    container: assets
+                    type: assets
+                    display: 'Loader Logo'
+                    max_files: 1
+                -
+                  handle: loader_line
+                  field:
+                    container: assets
+                    type: assets
+                    display: 'Loader Line'
+                    max_files: 1
+                -
+                  handle: store_name
+                  field:
+                    type: text
+                    display: 'Store Name'
+      -
+        display: 'Header Settings'
+        fields:
+          -
+            handle: sign_in
+            field:
+              max_rows: 1
+              min_rows: 1
+              type: grid
+              display: 'Sign In'
+              fields:
+                -
+                  handle: label
+                  field:
+                    default: 'Sign in'
+                    type: text
+                    display: Label
+                -
+                  handle: url
+                  field:
+                    collections:
+                      - pages
+                    type: link
+                    display: Url
+          -
+            handle: sign_up
+            field:
+              max_rows: 1
+              min_rows: 1
+              add_row: '1'
+              type: grid
+              display: 'Sign up'
+              fields:
+                -
+                  handle: label
+                  field:
+                    default: 'Sign up'
+                    type: text
+                    display: Label
+                -
+                  handle: url
+                  field:
+                    collections:
+                      - pages
+                    type: link
+                    display: URL
+  newsletter:
+    display: Newsletter
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            handle: popup_title
+            field:
+              type: text
+              display: 'Popup Title'
+              default: Newsletter
+          -
+            handle: popup_description
+            field:
+              type: textarea
+              display: Description
+              default: 'Sign up for newsletter to receive special offers and exclusive news about pets play'
+          -
+            handle: popup_image
+            field:
+              type: assets
+              display: 'Popup Image'
+              container: assets
+              max_files: 1
+          -
+            handle: check_label
+            field:
+              default: "Don't Show This Popup Again"
+              type: text
+              display: 'Check Label'
+  error_page:
+    display: 'Error Page'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            handle: error_image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Error Image'
+              validate:
+                - required
+          -
+            handle: error_title
+            field:
+              default: 'Page Not Found'
+              type: text
+              display: 'Error Title'
+          -
+            handle: error_description
+            field:
+              type: textarea
+              display: 'Error Description'
+          -
+            handle: error_button_text
+            field:
+              default: 'Back To Home'
+              type: text
+              display: 'Error Button Text'
+          -
+            handle: error_button_url
+            field:
+              default: /
+              type: text
+              display: 'Error Button URL'
+  instagram_image:
+    display: 'Instagram Image'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            handle: instagram_text
+            field:
+              type: text
+              display: 'Instagram Text'
+          -
+            handle: instagram_images
+            field:
+              type: replicator
+              display: 'Instagram Images'
+              collapse: true
+              sets:
+                images:
+                  display: Images
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: image
+                          field:
+                            container: assets
+                            type: assets
+                            display: Image
+                            max_files: 1
+                        -
+                          handle: url
+                          field:
+                            type: text
+                            display: URL

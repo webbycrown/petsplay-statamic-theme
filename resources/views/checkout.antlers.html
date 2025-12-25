@@ -1,0 +1,205 @@
+{{ if show_hero_section == true }}
+{{ partial:inner-hero-section }}
+{{ /if }}
+
+{{ checkout_data }}
+{{ if items | count > 0 }}
+<section class="checkout-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="check-out-wrapper">
+                    <!-- BILLING -->
+                    <div class="shopping-address">
+                        {{ product_page }} <h3>{{ billing_detail_label }}</h3>{{ /product_page }}
+
+                        <input type="hidden" name="author_id" id="author_id" value="{{ author_session:id }}">
+                        <input type="hidden" name="products" class="products" value="{{ items | json | entities }}">
+
+                        <input type="hidden" name="discount" id="discount" value="{{ discount }}">
+                        <input type="hidden" name="payment_type" id="payment_type" value="">
+
+                        <input type="text" class="input-form" name="name" value="{{ author_session:name }}" id="name"
+                            placeholder="Name">
+                        <span class="field-error text-danger" data-error-for="name"></span>
+
+                        <input type="text" class="input-form" name="address" value="{{ author_session:address }}"
+                            id="address" placeholder="Street address">
+                        <span class="field-error text-danger" data-error-for="address"></span>
+
+                        <input type="text" class="input-form" name="city" value="{{ author_session:city }}" id="city"
+                            placeholder="Town/City">
+                        <span class="field-error text-danger" data-error-for="city"></span>
+
+                        <input type="text" class="input-form" name="state" value="{{ author_session:state }}" id="state"
+                            placeholder="State">
+                        <span class="field-error text-danger" data-error-for="state"></span>
+
+                        <input type="text" class="input-form" name="zip" value="{{ author_session:zip }}" id="zip"
+                            placeholder="Zip Code">
+                        <span class="field-error text-danger" data-error-for="zip"></span>
+
+                        <textarea class="input-form" name="notes" id="notes"
+                            placeholder="Order notes (optional)">{{ author_session:notes }}</textarea>
+                        <span class="field-error text-danger" data-error-for="notes"></span>
+
+                    </div>
+
+                    <!-- CART -->
+                    <div class="payment-box">
+                        {{ product_page }}<h3>{{ product_label }}</h3>{{ /product_page }}
+                        <ul class="itams-detail">
+                            {{ items }}
+                            <li>
+                                <h5>
+                                    <span class="itams">{{ title }}</span>
+                                    <span class="price">$ {{ if price and quantity }} {{ price * quantity }} {{else}}
+                                        0.00 {{ /if }}</span>
+                                </h5>
+                            </li>
+                            {{ /items }}
+                        </ul>
+
+                        <div class="subtotal-wrapper">
+                            <div>
+                                {{ product_page }} <h4>{{ subtotal_label }}</h4> {{ /product_page }}
+                                <ul>
+                                    {{ s_charge = 0 }}
+                                    {{ product_page }}
+                                    {{ shipping_methods }}
+                                    {{ if free_shipping_limit <= subtotal }} {{ if shipping_charge !=0 }} {{
+                                        s_charge=shipping_charge }} <input type="hidden" name="s_charge"
+                                        class="s_charge" value="{{ s_charge }}">
+                                        <li data-aos="fade-up" data-aos-duration="1000"
+                                            class="shipping_charge aos-init aos-animate {{ method_name | lower | replace(' ', '-') }}">
+                                            {{ if shipping_charge }}{{ method_name }} : {{ shipping_charge }} {{ else }}
+                                            {{ shipping_charge }} {{ /if }}
+                                        </li>
+                                        {{ /if }}
+                                        {{ elseif shipping_charge == 0 }}
+                                        {{ s_charge = shipping_charge }}
+                                        <input type="hidden" name="s_charge" class="s_charge" value="{{ s_charge }}">
+                                        <li data-aos="fade-up" data-aos-duration="1000"
+                                            class="shipping_charge aos-init aos-animate {{ method_name | lower | replace(' ', '-') }}">
+                                            {{ if shipping_charge }}{{ method_name }} : {{ shipping_charge }} {{ else }}
+                                            {{ shipping_charge }} {{ /if }}
+                                        </li>
+                                        {{ /if }}
+                                        {{ /shipping_methods }}
+                                        {{ /product_page }}
+
+                                </ul>
+                            </div>
+                            <div class="payment-method">
+                                <h4><strong>$ {{ if subtotal }} {{ subtotal }} {{ else }} 0.00 {{ /if }}</strong></h4>
+                            </div>
+                        </div>
+
+                        <div class="subtotal-wrapper">
+                            <h4>Discount</h4>
+                            <h4><strong>$ {{ if discount }} {{ discount }} {{ else }} 0.00 {{ /if }}</strong></h4>
+                        </div>
+                        <div class="total-wrapper">
+                            {{ product_page }} <h4>{{ total_label }}</h4> {{ /product_page }}
+
+                            {{ grand_total = 0 }}
+                            {{ if total }}
+                            {{ grand_total = {total} + {s_charge} }}
+
+                            {{ if grand_total }}
+                            <h4><strong>$ {{ grand_total }}</strong></h4>
+                            <input type="hidden" name="amount" class="amount" value="{{ grand_total }}">
+                            {{ else }}
+                            <input type="hidden" name="amount" class="amount" value="{{ total }}">
+                            <h4><strong>$ {{ total }}</strong></h4>
+                            {{ /if }}
+                            {{ /if }}
+                        </div>
+                        {{ product_page }}
+                        <!-- PAYMENT OPTIONS -->
+                        <div class="payment-methods mb-50">
+                            {{ payments }}
+                            <div class="form-check payment-check">
+                                {{ payment_option }}
+                                {{ foreach:options as="option|label" }}
+                                <input type="radio" name="payment_method" class="payment_method"
+                                    value="{{ payment_option }}">
+                                <label>{{ label }}</label>
+                                {{ /foreach:options }}
+                                {{ /payment_option }}
+
+                                {{ if description }} <p class="para">{{ description }}</p>{{ /if }}
+                                {{ if image }}{{ image }}<img src="{{ url }}" alt=""> {{ /image }} {{ /if }}
+                            </div>
+                            {{ /payments }}
+
+                            <div class="payment-form-bottom d-flex">
+                                <input type="checkbox" id="terms">
+                                <label for="terms">I have read and agree to the website</label>
+                            </div>
+                        </div>
+                        {{ if {session:has key="author_logged_in"} }}
+                        {{ if button_text }}
+                        <div class="btn-button">
+                            <button class="place-order btn btn-primary" id="placeOrderBtn">{{ button_text }}</button>
+                        </div>
+                        {{/if }}
+                        {{ else }}
+                        <div class="btn-button">
+                            <button class="place-order btn btn-primary" id="LoginBtn" data-bs-toggle="modal"
+                                data-bs-target="#loginModal">Login to Pay</button>
+                        </div>
+                        {{ /if }}
+                        {{ /product_page }}
+                        <div id="success-message"></div>
+                        {{ /checkout_data }}
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+{{ else }}
+{{ redirect url="/" }}
+{{ /if }}
+
+<div class="modal fade" id="loginModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Sign in</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form id="login-popup-form" class="sign-form">
+                    <div id="login-message"></div>
+                    <div class="input-wrapper">
+                        <div class="form-field">
+                            <input class="form-control" type="email" name="email" placeholder=" " data-aos="fade-up"
+                                data-aos-duration="1000">
+                            <label class="form-label">Email</label>
+                            <span class="field-error text-danger" data-error-for="email"></span>
+                        </div>
+
+                        <div class="password form-field">
+                            <input type="password" class="form-control password" name="password" id="password"
+                                placeholder=" ">
+                            <label class="form-label">Password</label>
+                            <a id="togglePassword" class="toggle-password" href="javascript:;">
+                                <i class="fa-solid fa-eye-slash"></i><i class="fa-solid fa-eye"></i>
+                            </a>
+                            <span class="field-error text-danger" data-error-for="password"></span>
+                        </div>
+                    </div>
+                    <div class="signin-form-btn">
+                        <div class="btn-button">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

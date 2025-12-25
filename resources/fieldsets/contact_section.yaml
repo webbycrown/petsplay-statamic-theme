@@ -1,0 +1,57 @@
+title: 'Contact Section'
+fields:
+  -
+    handle: google_map
+    field:
+      type: textarea
+      display: 'Google Map Embed Code'
+  -
+    handle: contact_boxes
+    field:
+      type: replicator
+      display: 'Contact Information'
+      sets:
+        main:
+          display: Main
+          sets:
+            contact_item:
+              display: 'Contact Item'
+              fields:
+                -
+                  handle: icon
+                  field:
+                    type: assets
+                    max_files: 1
+                    display: Icon
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: 'Title (Contact Us, Location, Email)'
+                -
+                  handle: lines
+                  field:
+                    type: replicator
+                    display: Lines
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          lines:
+                            display: Lines
+                            fields:
+                              -
+                                handle: label
+                                field:
+                                  type: text
+                                  display: Label
+                              -
+                                handle: url
+                                field:
+                                  type: text
+                                  display: URL
+  -
+    handle: form_title
+    field:
+      type: text
+      display: 'Form Section Title'

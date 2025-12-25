@@ -1,0 +1,28 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <meta name="app-env" content="{{ config:app.env }}">
+    <!-- title -->
+    <title>{{ title ?? site:name }}</title>
+        
+    <!-- favicon -->
+   {{ setting }} <link rel="icon" href="{{ favicon }}{{ url }}{{ /favicon }}" type="image/gif">{{ /setting }}
+    <!-- font-family -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- aos CSS -->
+    <link rel="stylesheet" href="{{ theme:asset src='assets/css/aos.css' }}?v={{ now format="YmdHis" }}">
+    <!-- all-min CSS -->
+    <link rel="stylesheet" href="{{ theme:asset src='assets/css/all.min.css' }}?v={{ now format="YmdHis" }}">
+    <!-- magnific-popup CSS -->
+    <link rel="stylesheet" href="{{ theme:asset src='assets/css/magnific-popup.css' }}?v={{ now format="YmdHis" }}">
+    <!-- swiper-bundle CSS -->
+    <link rel="stylesheet" href="{{ theme:asset src='assets/css/swiper-bundle.min.css' }}?v={{ now format="YmdHis" }}">
+    <!-- bootstrap.min CSS -->
+    <link rel="stylesheet" href="{{ theme:asset src='assets/css/bootstrap.min.css' }}?v={{ now format="YmdHis" }}">
+    <!-- jquery.datetimepicker CSS -->
+    <link rel="stylesheet" href="{{ theme:asset src='assets/css/jquery.datetimepicker.css' }}?v={{ now format="YmdHis" }}">
+    <!-- Style CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ theme:asset src='assets/css/style.css' }}?v={{ now format="YmdHis" }}">
+</head>

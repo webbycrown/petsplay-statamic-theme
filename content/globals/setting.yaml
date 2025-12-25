@@ -1,0 +1,112 @@
+title: Setting
+data:
+  favicon: image/five-icon.png
+  logo: image/logo.png
+  inner_banner_image: image/back_image1.jpg
+  socials:
+    -
+      id: mhyrpq6p
+      title: Facebook
+      platform: facebook-f
+      url: 'https://www.facebook.com'
+    -
+      id: mhyrpx1d
+      title: Instagram
+      platform: instagram
+      url: 'https://www.instagram.com/'
+    -
+      id: mhyrq86h
+      title: Twitter
+      platform: x-twitter
+      url: 'https://twitter.com'
+    -
+      id: mhyrqh5t
+      title: LinkedIn
+      platform: linkedin-in
+      url: 'https://in.linkedin.com/'
+  contact_info:
+    -
+      id: mhyrua2z
+      icon: 'fa-solid fa-phone'
+      label: 'Call Us'
+      url: 'tel:+91123456789'
+      value: '+91 123 456 789'
+    -
+      id: mhyrvtre
+      icon: 'fa-solid fa-location-dot'
+      label: location
+      url: 'https://www.google.com/maps'
+      value: 'New York, NY, 21'
+  loaders:
+    loader_logo: image/loader-logo.png
+    loader_line: image/loader-line.png
+    store_name: PETSHOP
+  sign_in:
+    -
+      id: w0TufjcX
+      label: 'Sign in'
+      url: /sign-in
+  sign_up:
+    -
+      id: Tp0n07bZ
+      label: 'Sign up'
+      url: /sign-in
+  popup_title: Newsletter
+  popup_description: 'Sign up for newsletter to receive special offers and exclusive news about pets play'
+  popup_image: image/Newslattter.png
+  check_label: "Don't Show This Popup Again"
+  error_image: image/error.gif
+  error_title: 'Page Not Found'
+  error_description: 'he page you are looking is not available or has been removed. Try going to Home Page by using the button below.'
+  error_button_text: 'Back To Home'
+  error_button_url: /
+  instagram_text: Instagram
+  instagram_images:
+    -
+      id: mi46gw75
+      image: image/instagram-images-1.jpg
+      url: 'https://www.instagram.com/'
+      type: new_set
+      enabled: true
+    -
+      id: mi46i4nm
+      image: image/instagram-images-2.jpg
+      url: 'https://www.instagram.com/'
+      type: new_set
+      enabled: true
+    -
+      id: mi46ibhu
+      image: image/instagram-images-3.jpg
+      url: 'https://www.instagram.com/'
+      type: new_set
+      enabled: true
+    -
+      id: mi46ijbv
+      image: image/instagram-images-4.jpg
+      url: 'https://www.instagram.com/'
+      type: new_set
+      enabled: true
+    -
+      id: mi46iq2b
+      image: image/instagram-images-5.jpg
+      url: 'https://www.instagram.com/'
+      type: new_set
+      enabled: true
+    -
+      id: mi46ivtf
+      image: image/instagram-images-6.jpg
+      url: 'https://www.instagram.com/'
+      type: new_set
+      enabled: true
+    -
+      id: mi46j1jf
+      image: image/instagram-images-7.jpg
+      url: 'https://www.instagram.com/'
+      type: new_set
+      enabled: true
+    -
+      id: mi46jakc
+      image: image/instagram-images-8.jpg
+      url: 'https://www.instagram.com/'
+      type: new_set
+      enabled: true

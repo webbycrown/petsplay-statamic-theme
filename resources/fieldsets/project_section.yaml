@@ -1,0 +1,16 @@
+title: 'Product Section'
+fields:
+  -
+    handle: sub_title
+    field:
+      default: 'Our Products'
+      type: text
+      display: 'Sub Title'
+  -
+    handle: projects
+    field:
+      mode: select
+      collections:
+        - products
+      type: entries
+      display: Projects

@@ -1,0 +1,74 @@
+title: Coupon
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: code
+            field:
+              type: text
+              display: Code
+              validate:
+                - required
+              instructions: 'Coupon code the user will enter (e.g. SAVE10).'
+          -
+            handle: discount_type
+            field:
+              type: select
+              display: 'Discount Type'
+              options:
+                fixed: 'Fixed amount'
+                percentage: Percentage
+              default: fixed
+              validate:
+                - required
+          -
+            handle: discount_value
+            field:
+              type: integer
+              display: 'Discount Value'
+              instructions: 'If percentage, e.g. 10 = 10%. If fixed, 10 = $10.'
+              validate:
+                - required
+                - 'min:1'
+          -
+            handle: min_amount
+            field:
+              type: integer
+              display: 'Minimum Order Amount'
+              instructions: 'Minimum cart subtotal required for this coupon (0 for none).'
+              default: 0
+          -
+            handle: active
+            field:
+              type: toggle
+              display: Active
+              default: true
+          -
+            handle: expires_at
+            field:
+              type: date
+              display: 'Expires At'
+              instructions: 'Leave empty for no expiry.'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              display: Title
+              instructions: 'Internal name for this coupon.'
+              validate:
+                - required
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

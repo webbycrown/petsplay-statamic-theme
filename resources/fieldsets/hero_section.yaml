@@ -1,0 +1,37 @@
+title: 'Hero Section'
+fields:
+  -
+    handle: background_image
+    field:
+      type: assets
+      display: Background Image
+      mode: list
+      max_files: 1
+      container: assets
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: description_1
+    field:
+      type: textarea
+      display: Description Line 1
+  -
+    handle: description_2
+    field:
+      type: textarea
+      display: Description Line 2
+  -
+    handle: button_text
+    field:
+      type: text
+      display: Button Text
+      default: Shop Now
+  -
+    handle: button_url
+    field:
+      type: text
+      display: Button URL
+      default: /shop

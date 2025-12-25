@@ -1,0 +1,111 @@
+title: Order
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              display: Title
+              validate:
+                - required
+              visibility: read_only
+          -
+            handle: payment_id
+            field:
+              type: text
+              display: 'Payment Id'
+              width: 33
+              visibility: read_only
+          -
+            handle: payment_method
+            field:
+              type: text
+              display: 'Payment Method'
+              width: 33
+              visibility: read_only
+          -
+            handle: order_status
+            field:
+              default: created
+              type: text
+              display: Status
+              width: 33
+              visibility: read_only
+          -
+            handle: product_id
+            field:
+              type: text
+              display: 'Product ID'
+              visibility: read_only
+          -
+            handle: price
+            field:
+              type: float
+              display: Price
+              width: 25
+              visibility: read_only
+          -
+            handle: qty
+            field:
+              type: text
+              display: QTY
+              width: 25
+              visibility: read_only
+          -
+            handle: total
+            field:
+              type: text
+              display: Total
+              width: 25
+              visibility: read_only
+          -
+            handle: size
+            field:
+              type: text
+              display: size
+              width: 25
+              visibility: read_only
+          -
+            handle: coupon_id
+            field:
+              type: text
+              display: 'Coupon Id'
+              width: 50
+              visibility: read_only
+          -
+            handle: author_id
+            field:
+              type: text
+              display: 'Author Id'
+              width: 50
+              visibility: read_only
+          -
+            handle: discount
+            field:
+              type: float
+              display: Discount
+              width: 50
+              visibility: read_only
+          -
+            handle: shipping_charge
+            field:
+              type: float
+              display: 'Shipping charge'
+              width: 50
+              visibility: read_only
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

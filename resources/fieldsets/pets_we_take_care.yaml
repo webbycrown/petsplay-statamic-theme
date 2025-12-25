@@ -1,0 +1,36 @@
+title: 'Pets We Take Care'
+fields:
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: pets_we_take_care_items
+    field:
+      type: replicator
+      display: 'Pets We Take Care Items'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            item:
+              display: Item
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: link
+                  field:
+                    type: text
+                    display: Link

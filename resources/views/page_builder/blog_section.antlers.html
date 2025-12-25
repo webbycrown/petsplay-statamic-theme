@@ -1,0 +1,125 @@
+{{ if display_type == 'list' }}
+<section class="blog-page-section">
+    <div class="container">
+        <div class="row">
+            {{ if collections == 'blogs' }}
+            {{ collection:{collections} as="blogs" tag:contains="{ get:tag }" paginate="{pagination}" limit="{limit}" }}
+            {{ /if }}
+            <div class="col-12 grid_append">
+                {{ blogs }}
+                <div class="blog-box grid-item-append">
+                    <div class="blog-images-content" data-aos="zoom-in" data-aos-duration="1000">
+                        <div class="images-first-border">
+                            <div class="images-last-border">
+                                <div class="blog-images">
+                                    <a href="{{ url }}">
+                                        {{ featured_image }}<img src="{{ url }}" alt="{{ title }}">{{ /featured_image }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-text-content" data-aos="fade-up" data-aos-duration="1000">
+                        <h3 class="blog-title"><a href="{{ url }}">{{ title }}</a></h3>
+                        <div class="blog-deta-user">
+                            <ul>
+                                <li class="blog-deta">
+                                    <span class="icon">
+                                        <i class="fa-regular fa-clock"></i>
+                                    </span>
+                                    <span class="deta">{{ publish_date format="d M Y" }}</span>
+                                </li>
+                                <li class="user-nema">
+                                    <span class="icon">
+                                        <i
+                                        class="fa-regular fa-user"></i>
+                                    </span>
+                                    <span class="nema">{{ author.title }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <p>{{ short_description }}</p>
+                        {{ if button_text }}
+                        <div class="viewmore-btn">
+                            <a href="{{ url }}">{{ button_text }}</a>
+                        </div>
+                        {{ /if }}
+                    </div>
+                </div>
+                {{ /blogs }}
+                
+            </div>
+
+            {{ paginate }}
+                <input type="hidden" class="lastPage" value="{{ total_pages }}">
+                <input type="hidden" class="currentPage" value="{{ current_page }}">
+                {{ if next_page }} 
+                <div class="load-more-wrap loader-btn-box" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="btn-button">
+                        <a href="javascript:;" data-url="{{ next_page }}" class="btn btn-primary ajax-load-more-grid">
+
+                            <img src="{{theme:asset}}assets/image/loading-spinner.svg" alt="loader" class="object-cover animate-spin d-none">
+                        Load More</a>
+                    </div>
+                </div>
+                {{ /if }}
+                {{ /paginate }} 
+            {{ if collections == 'blogs' }}
+            {{ /collection:{collections} }}
+            {{ /if }}
+        </div>
+    </div>
+</section>
+{{ elseif display_type == 'select' }}
+<section class="blog-slider-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="blog-title-content custom-title-shape" data-aos="zoom-in" data-aos-duration="1000">
+                    <h2 class="sub-title text-center">{{ sub_title }}</h2>
+                    <img class="sub_title_svg" src="{{ theme:asset }}assets/image/sub-title-shape.svg" alt="">
+                </div>
+                <div class="blog-slider" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            {{ if collections == 'blogs' }}
+                            {{ collection:{collections} limit="{limit}" }}
+                            {{ /if }}
+                            <div class="swiper-slide">
+                                <div class="choose-box text-center">
+                                   <div class="blog-images">
+                                    {{ featured_image }}<img src="{{ url }}" alt="">{{ /featured_image }}
+
+                                </div>
+                            </div>
+                            <div class="blog-text-content text-center">
+                                <h3><a href="/blog/{{slug}}">{{ title }}</a></h3>
+                            </div>
+                        </div>
+                        {{ if collections == 'blogs' }}
+                        {{ /collection:{collections} }}
+                        {{ /if }}
+                    </div>
+                </div>
+            </div>
+
+                <div class="choose-slider-arrow">
+                    <div class="swiper-button-prev">
+                        <div class="arrow-box">
+                            <img src="{{ theme:asset }}assets/image/choose-arrow-l.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-button-next">
+                        <div class="arrow-box">
+                            <img src="{{ theme:asset }}assets/image/choose-arrow-r.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="Speech"></div>
+{{ /if }}

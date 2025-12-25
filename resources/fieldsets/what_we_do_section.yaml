@@ -1,0 +1,54 @@
+title: 'What We Do Section'
+fields:
+  -
+    handle: section_title
+    field:
+      default: 'What We Do'
+      type: text
+      display: 'Section Title'
+  -
+    handle: left_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Main Left Image'
+  -
+    handle: main_heading
+    field:
+      type: textarea
+      display: 'Main Heading'
+  -
+    handle: detail_blocks
+    field:
+      type: replicator
+      display: 'Detail Blocks'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            detail_item:
+              display: 'Detail Item'
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+  -
+    handle: button_text
+    field:
+      default: 'Read More'
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_link
+    field:
+      default: /contact
+      type: text
+      display: 'Button Link'

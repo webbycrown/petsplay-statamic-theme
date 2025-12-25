@@ -1,0 +1,59 @@
+title: 'Services Content'
+fields:
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: left_title
+    field:
+      type: text
+      display: 'Left Side Title'
+  -
+    handle: left_description
+    field:
+      type: textarea
+      display: 'Left Description'
+  -
+    handle: button_text
+    field:
+      default: 'Book Now'
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      default: /service
+      type: text
+      display: 'Button URL'
+  -
+    handle: services
+    field:
+      type: replicator
+      display: 'Service Boxes'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: link
+                  field:
+                    default: /service
+                    type: text
+                    display: Link
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image

@@ -1,0 +1,78 @@
+title: 'Why Choose Us Section'
+fields:
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+      instructions: 'Example: Why Choose Us ?'
+      validate:
+        - required
+  -
+    handle: section_description
+    field:
+      type: textarea
+      display: 'Section Subtitle'
+      instructions: 'Short text below the title.'
+      validate:
+        - required
+  -
+    handle: slider_items
+    field:
+      type: replicator
+      display: 'Slider Items'
+      instructions: 'Add slides for the Swiper carousel.'
+      sets:
+        main:
+          display: Main
+          sets:
+            choose_slide:
+              display: Slide
+              fields:
+                -
+                  handle: background_image
+                  field:
+                    type: assets
+                    container: assets
+                    display: 'Background Image'
+                    max_files: 1
+                    validate:
+                      - required
+                -
+                  handle: item_title
+                  field:
+                    type: text
+                    display: Title
+                    instructions: 'Example: We Heal Pets'
+                    validate:
+                      - required
+                -
+                  handle: item_icon
+                  field:
+                    type: assets
+                    container: assets
+                    display: 'Icon Image'
+                    max_files: 1
+                    validate:
+                      - required
+                -
+                  handle: item_text
+                  field:
+                    type: textarea
+                    display: Description
+                    instructions: 'Slide text content.'
+                    validate:
+                      - required
+                -
+                  handle: button_text
+                  field:
+                    type: text
+                    display: 'Button Text'
+                    instructions: 'Example: Read More'
+                    default: 'Read More'
+                -
+                  handle: button_link
+                  field:
+                    default: /gallery
+                    type: text
+                    display: 'Button Link'

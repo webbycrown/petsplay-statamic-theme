@@ -1,0 +1,88 @@
+title: Customer
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Name
+              placeholder: Name
+          -
+            handle: email
+            field:
+              placeholder: 'Email Address'
+              type: text
+              display: Email
+              validate:
+                - required
+                - email
+          -
+            handle: number
+            field:
+              placeholder: 'Phone No.'
+              type: text
+              display: Number
+              validate:
+                - required
+          -
+            handle: password
+            field:
+              placeholder: Password
+              type: text
+              display: Password
+              validate:
+                - required
+              visibility: read_only
+          -
+            handle: accept_terms_text
+            field:
+              type: text
+              display: 'Accept Terms Text'
+          -
+            handle: address
+            field:
+              type: text
+              display: Address
+          -
+            handle: city
+            field:
+              type: text
+              display: City
+          -
+            handle: state
+            field:
+              type: text
+              display: State
+          -
+            handle: zip_code
+            field:
+              type: text
+              display: 'Zip Code'
+          -
+            handle: notes
+            field:
+              type: textarea
+              display: 'Order Notes (optional)'
+          -
+            handle: token
+            field:
+              type: text
+              display: Token
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

@@ -1,0 +1,54 @@
+ <section class="testimonials-section" style="background-image:url({{ theme:asset  }}assets/image/choose-bg.png);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="testimonials-title-content custom-title-shape" data-aos="zoom-in"
+                            data-aos-duration="1000">
+                            <h2 class="sub-title text-center">{{ sub_title }}</h2>
+                            <img class="sub_title_svg" src="{{ theme:asset }}assets/image/sub-title-shape.svg" alt="">
+                        </div>
+                        <div class="testimonials-slider-arrow">
+                            <div class="testimonials-sub-title text-center">
+                                <h3>{{ section_title }}</h3>
+                            </div>
+                            <div class="choose-slider-arrow">
+                                <div class="swiper-button-prev">
+                                    <div class="arrow-box">
+                                        <img src="{{ theme:asset }}assets/image/choose-arrow-l.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next">
+                                    <div class="arrow-box">
+                                        <img src="{{ theme:asset }}assets/image/choose-arrow-r.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-slider" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    {{ testimonials }}
+                                    <div class="swiper-slide">
+                                        <div class="testimonials-slider-box">
+                                            <div class="image-and-name">
+                                                <div class="testimonials-img">
+                                                    {{ image }}<img src="{{ url }}" alt="">{{ /image }}
+                                                </div>
+                                                <div class="testimonials-user-name">
+                                                    <h5>{{ title }}</h5>
+                                                    <p>{{ position }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="testimonials-user-review-content">
+                                                <p>{{ content }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{ /testimonials }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

@@ -1,0 +1,41 @@
+<section class="choose-section" style="background-image:url({{ theme:asset  }}assets/image/choose-bg.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="choose-title-content custom-title-shape" data-aos="zoom-in" data-aos-duration="1000">
+                    <h2 class="sub-title text-center">{{ section_title }}</h2>
+                    <img class="sub_title_svg" src="{{ theme:asset }}assets/image/sub-title-shape.svg" alt="">
+                </div>
+                <p class="sub-text">{{ section_description }}</p>
+                <div class="choose-slider" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            {{ slider_items }}
+                            <div class="swiper-slide" style="background-image:url({{ background_image  }});">
+                                <div class="choose-box text-center">
+                                    <h4>{{ item_title }}</h4>
+                                    <img src="{{ item_icon }}{{url}}{{ /item_icon }}" alt="">
+                                    <p>{{ item_text | truncate:100 }}</p>
+                                    {{ if button_text }}<a class="read-more-btn" href="{{ button_link }}">{{ button_text }}</a>{{ /if }}
+                                </div>
+                            </div>
+                            {{ /slider_items }}
+                        </div>
+                    </div>
+                </div>
+                <div class="choose-slider-arrow">
+                    <div class="swiper-button-prev">
+                        <div class="arrow-box">
+                            <img src="{{ theme:asset }}assets/image/choose-arrow-l.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-button-next">
+                        <div class="arrow-box">
+                            <img src="{{ theme:asset }}assets/image/choose-arrow-r.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

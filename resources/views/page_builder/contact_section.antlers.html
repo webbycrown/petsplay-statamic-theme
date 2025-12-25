@@ -1,0 +1,108 @@
+<div class="contact-map-page-section">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 p-0">
+				<div class="map-wrapper" data-aos="zoom-in" data-aos-duration="1000">
+					<iframe src="{{ google_map }}" style="border:0;"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<section class="contact-page-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="conatct-wrapper">
+					<div class="contact-detail">
+						{{ contact_boxes }}
+						<div class="contact-box" data-aos="fade-up" data-aos-duration="1000">
+							<div class="icon">
+								<img src="{{ icon }}{{url}}{{ /icon }}" alt="">
+							</div>
+							<div class="contact-content">
+								<h5 class="contact-title">{{ title }}</h5>
+								{{ lines }}
+								<h6><a href="{{ url }}">{{ label }}</a></h6>
+								{{ /lines }}
+							</div>
+						</div>
+						{{ /contact_boxes }}
+					</div>
+					<div class="contact-form">
+						<div class="comment-form">
+							<div class="contact-form-title-content custom-title-shape" data-aos="fade-up"
+								data-aos-duration="1000">
+								<h2 class="sub-title text-center">{{ form_title }}</h2>
+								<img class="sub_title_svg" src="{{ theme:asset }}assets/image/sub-title-shape.svg"
+									alt="">
+							</div>
+							{{ form:contact id="contactForm" ajax="true" }}
+							{{ csrf }}
+
+							{{ fields }}
+
+							{{ if index % 2 == 0 }}
+							<div class="form-row nema-wrapper">
+								{{ /if }}
+
+								<div class="col-12 col-md-6  form-field">
+									<div class="form-group">
+
+										{{ if type == "textarea" }}
+										<textarea id="{{ handle }}" name="{{ handle }}" class="form-control"
+											placeholder=" ">{{ old }}</textarea>
+										<label>{{ display }}{{ if validate && validate contains='required' }}*{{ /if
+											}}</label>
+
+										{{ elseif handle == "package_id" }}
+										<select class="form-control" name="{{ handle }}" >
+											<option value="">
+												{{ display }} select{{ if validate && validate contains='required' }}*{{ /if }}
+											</option>
+
+											{{ collection:packages }}
+											<option value="{{ id }}" {{ if id=={session:package_id} }}selected{{ /if }}>
+												{{ title }}
+											</option>
+											{{ /collection:packages }}
+										</select>
+
+										{{ else }}
+										<input type="{{ type == 'text' ? 'text' : type }}" id="{{ handle }}"
+											name="{{ handle }}" class="form-control" placeholder=" " value="{{ old }}">
+										<!-- <input type="{{ type == 'text' ? 'text' : type }}" id="{{ handle }}" name="{{ handle }}" class="form-control" placeholder="{{ display }}{{ if validate && validate contains='required' }}*{{ /if }}" value="{{ old }}" > -->
+										<label>{{ display }}{{ if validate && validate contains='required' }}*{{ /if
+											}}</label>
+										{{ /if }}
+
+										<div class="field-error text-danger" data-error-for="{{ handle }}">
+											{{ error }}
+										</div>
+
+									</div>
+								</div>
+
+								{{ if index % 2 == 1 || last }}
+							</div>
+							{{ /if }}
+
+							{{ /fields }}
+
+
+							<div class="comment-form-btn" data-aos="fade-up" data-aos-duration="1000">
+								<div class="btn-button">
+									<button type="submit" class="btn btn-primary">Submit</button>
+								</div>
+							</div>
+							<p class="form-message"></p>
+							{{ /form:contact }}
+						</div>
+						<img class="contact-bg-img" src="{{ theme:asset }}assets/image/img-12.jpg" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

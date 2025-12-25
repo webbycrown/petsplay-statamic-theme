@@ -1,0 +1,33 @@
+{{ if show_hero_section == true }}
+{{ partial:inner-hero-section }}
+{{ /if }}
+
+{{ setting }}
+<section class="error-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="main-error-wrapper">
+					<div class="error-img-wrapper" data-aos="zoom-in" data-aos-duration="1000">
+						{{ error_image }}<img src="{{ url }}" alt="">{{ /error_image }}
+					</div>
+					<div class="error-text-wrapper text-center">
+						<div class="title">
+							<h3 data-aos="fade-up" data-aos-duration="1000">{{ error_title }}</h3>
+							<p data-aos="fade-up" data-aos-duration="1000">{{ error_description }}</p>
+						</div>
+						{{ if error_button_text }}
+						<div class="home-btn" data-aos="fade-up" data-aos-duration="1000">
+							<div class="btn-button">
+								<a href="{{ error_button_url }}" class="btn btn-primary">{{ error_button_text }}</a>
+							</div>
+						</div>
+						{{ /if }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{{ /setting }}

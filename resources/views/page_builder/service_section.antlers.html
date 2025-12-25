@@ -1,0 +1,54 @@
+	<section class="service-page-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="service-title-content custom-title-shape" data-aos="zoom-in"
+					data-aos-duration="1000">
+					<h2 class="sub-title text-center">{{ sub_title }}</h2>
+					<img class="sub_title_svg" src="{{ theme:asset }}assets/image/sub-title-shape.svg" alt="">
+				</div>
+
+				<div class="service-wrapper">
+					<div class="service-images-wrapper" data-aos="fade-right" data-aos-duration="1000">
+						{{ side_image }}<img src="{{ url }}" alt="">{{ /side_image }}
+					</div>
+					{{ if collections == 'services' }}
+					{{ collection:services as="services" paginate="{pagination}" limit="{limit}" }}
+					{{ /if }}
+					<div class="service-content-wrapper grid_append">
+						{{ services }}
+						<div class="service-content grid-item-append" data-aos="fade-left" data-aos-duration="1000">
+							<div class="service-icon">
+								{{ icon }}<img src="{{ url }}" alt="">{{ /icon }}
+							</div>
+							<div class="service-text">
+								<h4><a href="{{url}}">{{ title }}</a></h4>
+								<p>{{ short_description }}</p>
+							</div>
+						</div>
+						{{ /services }}
+
+						
+					</div>
+
+					{{ paginate }}
+						<input type="hidden" class="lastPage" value="{{ total_pages }}">
+						<input type="hidden" class="currentPage" value="{{ current_page }}">
+						{{ if next_page }} 
+						<div class="load-more-wrap loader-btn-box" data-aos="fade-up" data-aos-duration="1000">
+							<div class="btn-button">
+								<a href="javascript:;" data-url="{{ next_page }}" class="btn btn-primary ajax-load-more-grid">
+									<img src="{{theme:asset}}assets/image/loading-spinner.svg" alt="loader" class="object-cover animate-spin d-none">Load More
+								</a>
+							</div>
+						</div>
+						{{ /if }}
+						{{ /paginate }} 
+					{{ if collections == 'services' }}
+					{{ /collection:services }}
+					{{ /if }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

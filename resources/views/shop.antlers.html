@@ -1,0 +1,50 @@
+{{ if show_hero_section == true }}
+{{ partial:inner-hero-section }}
+{{ /if }}
+
+<div class="shape-box">
+
+	<div class="bg-shape-section" style="background-image: url({{ theme:asset }}assets/image/shape.gif);"></div>
+
+	<section class="shop-page-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="shop-options">
+						<div class="shop-options-content" data-aos="fade-right" data-aos-duration="1000">
+							<div class="search-box">
+								<div class="input-btn-group">
+									<input type="text" id="search-input" class="form-control" placeholder="Search here.....">
+									<button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+								</div>
+							</div>
+							<div class="grid-and-list">
+								<a class="grid active" href="javascript:;"><i class="fa-solid fa-grip"></i></a>
+								<a href="javascript:;" class="list"><i class="fa-solid fa-list"></i></a>
+							</div>
+						</div>
+						{{ collection:products as="products" paginate="true" limit="1" }}
+						<div class="show-product-content" data-aos="fade-left" data-aos-duration="1000">
+							<p>Showing <span class="current_page_number">{{ paginate.current_page }}</span>–{{ paginate.items_per_page }} of {{ paginate.total_items }} results</p>
+						</div>
+						{{ /collection:products }}
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="row product-wrapper">
+						{{ partial:shop-side-content }}
+						<div class="col-12 col-md-8">
+							<div id="selected-tags" class="d-flex flex-wrap gap-2 mb-3 selected-tags d-none" data-aos="fade-up" data-aos-duration="1000"></div>
+							<div class="all-product">
+							{{ partial:product-list }}
+						</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+</div>

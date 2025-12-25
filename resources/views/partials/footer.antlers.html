@@ -1,0 +1,80 @@
+ <footer>
+    <div class="sub-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="wc-footer-content">
+                        {{ setting }}
+                        <div class="social-media-box">
+                            <div class="footer-logo">
+                                {{ logo }}<a href="/"><img src="{{ url }}" alt=""></a>{{ /logo }}
+                            </div>
+                            <div class="footer-social">
+                                <ul>
+                                    {{ socials }}
+                                    <li>
+                                        <a href="{{ url }}"><i
+                                            class="fa-brands fa-{{ platform }}"></i>
+                                        </a>
+                                    </li>
+                                    {{ /socials }}
+                                </ul>
+                            </div>
+                        </div>
+                        {{ /setting }}
+                        {{ footer }}
+                        {{ if information_links }}
+                        <div class="information-footer">
+                            {{ if information_title }}<h4 class="footer-title">{{ information_title }}</h4>{{ /if }}
+                            <ul>
+                                {{ information_links }}
+                                <li><a href="{{ url }}">{{ name }}</a></li>
+                                {{ /information_links }}
+                            </ul>
+                        </div>
+                        {{ /if }}
+                        {{ if helpful_links }}
+                        <div class="helpful-footer">
+                            {{ if helpful_link_title }}<h4 class="footer-title">{{ helpful_link_title }}</h4>{{ /if }}
+                            <ul>
+                                {{ helpful_links }}
+                                <li><a href="{{ url }}">{{ name }}</a></li>
+                                {{ /helpful_links }}
+                            </ul>
+                        </div>
+                        {{ /if }}
+                        {{ if newsletter_title }}
+                        <div class="newsletter-box">
+                            <h4 class="footer-title">{{ newsletter_title }}</h4>
+                            <form class="flex-column get-free-quote-form bg-transparent p-0 border-0" id="newsletterForm">
+                                {{ csrf }}
+                                <div class="newsletter-content">
+                                    <div class="input-btn-group">
+                                        <input type="text" class="form-control" id="email" name="email" placeholder="Enter Your E-mail">
+                                        <button type="submit" class="submit-btn">
+                                            <i class="fa-solid fa-paper-plane"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="form-message field-error text-danger"></p>
+                            </form>
+                        </div>
+                        {{ /if }}
+                        {{ /footer }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ footer }}
+        <div class="container-fluid p-0 m-0">
+            <div class="row p-0 m-0">
+                <div class="col-12 p-0 m-0">
+                    <div class="copy-right-text text-center">
+                        <p>{{ copyright }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ /footer }}
+    </div>
+</footer>

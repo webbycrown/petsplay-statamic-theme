@@ -1,0 +1,101 @@
+ <section class="other-hero-section" {{ setting }}{{ inner_banner_image }}style="background-image:url( {{ url }});" {{ /inner_banner_image }}{{ /setting }}>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 p-0">
+                        <div class="other-hero-content">
+                            <div class="container">
+                                <div class="other-title-content">
+                                    <h1 class="title" data-aos="fade-right" data-aos-duration="1000">Service single
+                                    </h1>
+                                    <p data-aos="fade-up" data-aos-duration="1000"><a href="/">Home</a> 
+                                        <span class="other-icon"><i class="fa-solid fa-angles-right"></i></span>
+                                        <a href="/services">Service</a>
+                                        {{ if title }}
+                                        <span class="other-icon"><i class="fa-solid fa-angles-right"></i></span>
+                                        <span>{{ title }}</span>
+                                        {{ /if }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= Start services single section ======= -->
+        <section class="services-single">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="services-main-details">
+                            <div class="featured-wrapper"> {{ featured_image }}<img src="{{ url }}" alt="">{{ /featured_image }}</div>
+                            <h2>{{ title }}</h2>
+
+                            {{ content }}
+
+                            {{ if paragraph and type != "frequently_asked_questions" }}
+                            <p data-aos="fade-up" data-aos-duration="1000">
+                                {{ paragraph }}
+                            </p>
+                            {{ /if }}
+
+                            {{ if items }}
+                            <ul class="icon-list-items" data-aos="fade-up" data-aos-duration="1000">
+                                {{ items }}
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    {{ value }}
+                                </li>
+                                {{ /items }}
+                            </ul>
+                            {{ /if }}
+
+                            {{ if type == "images" }}
+                            <div class="services-image">
+                                {{ image }}
+                                <img src="{{ url }}" alt="services-single">
+                                {{ /image }}
+                            </div>
+                            {{ /if }}
+
+                            {{ if type == "frequently_asked_questions" }}
+
+                            {{ if faq_title }}
+                            <h3 class="faq-title">{{ faq_title }}</h3>
+                            {{ /if }}
+
+                            {{ if paragraph }}
+                            <p>{{ paragraph }}</p>
+                            {{ /if }}
+
+                            {{ if faq_items }}
+                            <div class="accordion accordion--radio">
+                                {{ faq_items }}
+                                <div class="tab" data-aos="fade-up" data-aos-duration="1000">
+                                    <input
+                                    type="radio"
+                                    name="accordion-2"
+                                    id="rd{{ index }}"
+                                    >
+                                    <label for="rd{{ index }}" class="tab__label">
+                                        {{ question }}
+                                    </label>
+                                    <div class="tab__content">
+                                        <p>{{ answer }}</p>
+                                    </div>
+                                </div>
+                                {{ /faq_items }}
+                            </div>
+                            {{ /if }}
+
+                            {{ /if }}
+
+                            {{ /content }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======= End services single section ======= -->

@@ -1,0 +1,113 @@
+title: Blog
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: featured_image
+            field:
+              type: assets
+              max_files: 1
+              container: assets
+              folder: blog
+              display: 'Featured Image'
+              instructions: 'Upload the main blog image.'
+          -
+            handle: publish_date
+            field:
+              type: date
+              display: 'Publish Date'
+              format: Y-m-d
+              instructions: 'Select the blog publish date.'
+          -
+            handle: author
+            field:
+              max_items: 1
+              mode: select
+              collections:
+                - teams
+              type: entries
+              display: Author
+          -
+            handle: short_description
+            field:
+              type: textarea
+              display: 'Short Description'
+          -
+            handle: content
+            field:
+              type: bard
+              display: 'Blog Content'
+              remove_empty_nodes: false
+              sets:
+                main:
+                  display: Main
+                  sets:
+                    paragraphs:
+                      display: Paragraph
+                      fields:
+                        -
+                          handle: paragraph
+                          field:
+                            type: textarea
+                            display: Text
+                    quote:
+                      display: 'Quote Block'
+                      fields:
+                        -
+                          handle: quote_text
+                          field:
+                            type: textarea
+                            display: 'Quote Text'
+                    expect_list:
+                      display: 'What To Expect List'
+                      fields:
+                        -
+                          handle: expect_title
+                          field:
+                            type: text
+                            display: 'Expect Title'
+                        -
+                          handle: paragraph
+                          field:
+                            type: textarea
+                            display: Text
+                        -
+                          handle: items
+                          field:
+                            type: list
+                            display: 'List Items'
+          -
+            handle: button_text
+            field:
+              default: 'View More'
+              type: text
+              display: 'Button Text'
+          -
+            handle: category
+            field:
+              mode: select
+              taxonomies:
+                - blog_categories
+              type: terms
+              display: Category
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

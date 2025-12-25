@@ -1,0 +1,15 @@
+ <div class="packages-content text-center" data-aos="fade-up" data-aos-duration="1000" style="background-image: url({{ background_image  }} {{ url }} {{ /background_image  }});">
+  <div class="packages-img">
+    {{ package_image }}<img src="{{ url }}" alt="">{{ /package_image }}
+  </div>
+  <h3 class="packages-price">${{price}}/-</h3>
+  <h4 class="packages-title"><a href="/shop">{{ title }}</a></h4>
+  <p>{{ description }}</p>
+  {{ if button_text }}
+  <div class="packages-btn">
+    <div class="btn-button">
+      <a href="{{ button_link }}" class="btn btn-primary">{{ button_text }}</a>
+    </div>
+  </div>
+  {{ /if }}
+</div>

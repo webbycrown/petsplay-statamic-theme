@@ -1,0 +1,37 @@
+title: 'Count Section'
+fields:
+  -
+    handle: count_boxes
+    field:
+      collapse: true
+      type: replicator
+      display: 'Count Boxes'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            count_item:
+              display: 'Count Item'
+              fields:
+                -
+                  handle: icon
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Icon
+                -
+                  handle: number
+                  field:
+                    type: text
+                    display: Number
+                -
+                  handle: plus_sign
+                  field:
+                    type: text
+                    display: 'Plus Sign'
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label

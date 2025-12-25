@@ -1,0 +1,82 @@
+title: 'All Page Builder'
+fields:
+  -
+    handle: page_builder
+    field:
+      type: replicator
+      display: 'Page Builder'
+      collapse: true
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            hero_section:
+              display: 'Hero Section'
+              fields:
+                -
+                  import: hero_section
+            blog_section:
+              display: 'Blog Section'
+              fields:
+                -
+                  import: blog_section
+            service_section:
+              display: 'Service Section'
+              fields:
+                -
+                  import: service_section
+            package_section:
+              display: 'Package Section'
+              fields:
+                -
+                  import: package_section
+            what_we_do_section:
+              display: 'What We Do Section'
+              fields:
+                -
+                  import: what_we_do_section
+            count_section:
+              display: 'Count Section'
+              fields:
+                -
+                  import: count_section
+            pets_we_take_care:
+              display: 'Pets We Take Care'
+              fields:
+                -
+                  import: pets_we_take_care
+            team_section:
+              display: 'Team Section'
+              fields:
+                -
+                  import: team_section
+            services_content:
+              display: 'Services Content'
+              fields:
+                -
+                  import: services_content
+            why_choose_us_section:
+              display: 'Why Choose Us Section'
+              fields:
+                -
+                  import: why_choose_us_section
+            testimonials_section:
+              display: 'Testimonials Section'
+              fields:
+                -
+                  import: testimonials_section
+            contact_section:
+              display: 'Contact Section'
+              fields:
+                -
+                  import: contact_section
+            product_section:
+              display: 'Product Section'
+              fields:
+                -
+                  import: project_section
+            terms_conditions:
+              display: 'Terms & Conditions'
+              fields:
+                -
+                  import: terms_conditions

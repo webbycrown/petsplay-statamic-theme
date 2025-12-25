@@ -1,0 +1,26 @@
+<section class="take-care-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="take-care-title-content custom-title-shape" data-aos="zoom-in"
+							data-aos-duration="1000">
+							<h2 class="sub-title text-center">{{ section_title }}</h2>
+							<img class="sub_title_svg" src="{{ theme:asset }}assets/image/sub-title-shape.svg" alt="">
+						</div>
+						<div class="main-take-care-box">
+							{{ pets_we_take_care_items }}
+							<div class="take-care-box" data-aos="fade-up" data-aos-duration="1000">
+								<div class="main-take-care-img">
+									<div class="sub-take-care-img">
+										<img src="{{ image }} {{ url }} {{ /image }}" alt="{{ title }}">
+										<a href="{{ link }}"><i class="fa-solid fa-plus"></i></a>
+									</div>
+								</div>
+								{{ if title }}<h3><a href="{{ link }}">{{ title }}</a></h3>{{ /if }}
+							</div>
+							{{ /pets_we_take_care_items }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>

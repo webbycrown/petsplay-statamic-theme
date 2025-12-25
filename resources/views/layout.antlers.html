@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="{{ site:short_locale }}">
+{{ partial:header-link }}
+<style>
+
+</style>
+<body class="home">
+    <!-- ======= Start loader ======= -->
+    {{ setting }}
+    {{ loaders }}
+    <div class="loader-section loader--active">
+        <div class="wrapper">
+            <div class="loader">
+                <div class="inner">
+                    <div class="loader-logo-text">
+                        <span class="loader-logo">{{ if loader_logo }}<img src="{{ loader_logo }}" alt="">{{ /if }}</span>
+                        <span class="loader-line">{{ if loader_line }}<img src="{{ loader_line }}" alt="">{{ /if }}</span>
+                    </div>
+                    {{ if store_name }}
+                    <div class="loader-text">
+                       <span>{{ store_name }}</span>
+                    </div>
+                    {{ /if }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ /loaders }}
+    {{ /setting }}
+    <!-- ======= End loader ======= -->
+    {{ if segment_1 != 'reset-password' }}
+    <!-- ======= Start sidebar ======= -->
+    {{ partial:header }}
+    <!-- ======= End Sub header ======= -->
+    {{ /if }}
+    <!-- ======= Start main body ======= -->
+    <div class="wc-main-body">
+         {{ template_content }}
+    </div>
+
+    {{ if segment_1 != 'reset-password' }}
+    <!-- ======= Start footer section ======= -->
+    {{ partial:footer }}
+   
+    <!-- ======= End footer section ======= -->
+
+    {{ setting }}
+    <div class="automatically_open_popup_window">
+        <div class='popup'>
+            <a class='close' href="">×</a>
+            <div class="automatically_open_popup_window_content">
+                <div class="automatically_open_popup_window_img">
+                    {{ popup_image }}
+                    <img src="{{ url }}" alt="">
+                {{ /popup_image }}
+                </div>
+                <div class="automatically_open_popup_window_text">
+                    <h3>{{ popup_title }}</h3>
+                    <p>{{ popup_description }}</p>
+
+                   <form class="flex-column get-free-quote-form bg-transparent p-0 border-0" id="newsletterForm">
+                    {{ csrf }}
+                    <div class="newsletter-content">
+                        <div class="input-btn-group">
+                            <input type="text" class="form-control" name="email" id="email" placeholder="Enter Your E-mail">
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    
+                    <p class="form-message "></p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ /setting }}
+    {{ /if }}
+
+    {{ partial:footer-link }}
+   
+</body>
+
+</html>

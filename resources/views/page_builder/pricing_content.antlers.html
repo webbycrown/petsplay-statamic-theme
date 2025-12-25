@@ -1,0 +1,40 @@
+ <section class="pricing-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="pricing-title-content custom-title-shape" data-aos="zoom-in" data-aos-duration="1000" >
+                    <h2 class="sub-title text-center">{{ section_title }}</h2>
+                    <img class="sub_title_svg" src="{{ theme:asset }}assets/image/sub-title-shape.svg" alt="">
+                    
+                </div>
+                <div class="pricing-sub-title text-center">
+                    <h3>{{ section_subtitle }}</h3>
+                </div>
+                <div class="main-pricing-box">
+                    {{ pricing }}
+                    
+                    
+                    
+                    <div class="pricing-box {{ if background_image }} active {{ /if }} text-center" data-aos="fade-up" data-aos-duration="1000" style="background-image:url({{background_image}}{{url}}{{ /background_image }});">
+                        <h4 class="">{{ title }}</h4>
+                        <h2><span class="currency">{{ currency }}</span> {{price}} <span class="time">{{ time_label }}</span></h2>
+                        <ul>
+                            {{ features }}
+                            <li>{{ feature_text }} <img src="{{ theme:asset }}assets/image/pricing-{{ feature_type }}.svg" alt="image"></li>
+                            {{ /features }}
+                        </ul>
+                        {{ if button_text }}
+                        <div class="pricing-btn">
+                            <div class="btn-button"><a href="{{ button_link }}" class="btn btn-primary">{{ button_text }}</a>
+                            </div>
+                        </div>
+                        {{ /if }}
+
+                    </div>
+                    
+                    {{ /pricing }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

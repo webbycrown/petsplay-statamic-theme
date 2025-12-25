@@ -1,0 +1,87 @@
+<div class="col-12 col-md-4">
+	<div class="side-content">
+		<div class="categories-box">
+			{{ product_page }}
+			<h3 class="shop-title" data-aos="fade-up" data-aos-duration="1000">{{ category_label }}</h3>
+			{{ /product_page }}
+			<div class="accordion">
+				{{ taxonomy:product_categories }}
+				{{ if ! parent }}
+				<div class="accordion-item" data-aos="fade-up" data-aos-duration="1000">
+					<h3 class="accordion-tabs">
+						<a href="javascript:;" class="category-link" data-category="{{ slug }}">
+							<span class="category-span">{{ title }}</span>
+						</a>
+						<a href="javascript:;" class="category-links">
+							<span>
+								<i class="fa-solid fa-plus"></i>
+								<i class="fa-solid fa-minus"></i>
+							</span>
+						</a>
+					</h3>
+
+					<div class="accordion-content">
+						{{ taxonomy:product_categories parent:contains="{ slug }" }}
+						<div class="accordion-tabs">
+							<a href="javascript:;" class="category-link category-links" data-label="{{ title }}" data-category="{{ slug }}">
+								<span class="category-span">{{ title }}</span></a>
+						</div>
+						{{ /taxonomy:product_categories }}
+
+					</div>
+				</div>
+				{{ /if }}
+				{{ /taxonomy:product_categories }}
+			</div>
+		</div>
+		<div class="color-box">
+			{{ product_page }}
+			<h3 class="shop-title" data-aos="fade-up" data-aos-duration="1000">{{ color_label }}
+			</h3>
+			{{ /product_page }}
+			<ul>
+				{{ taxonomy:product_color }}
+				<li data-aos="fade-up" data-aos-duration="1000">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="color[]" data-label="{{ title }}" data-color="{{ slug }}" id="color-{{ index }}">
+						<label class="form-check-label" for="color-{{ index }}">
+							<span class="color-preview" 
+							style="display:inline-block;width:15px;height:15px;border-radius:50%;background:{{ color }};margin-right:6px;border: 2px solid #0000008a;"></span>
+							{{ title }}
+						</label>
+					</div>
+				</li>
+				{{ /taxonomy:product_color }}
+			</ul>
+		</div>
+		{{ setting }}
+		{{ if instagram_images }}
+		<div class="instagram-box">
+			<h3 class="shop-title">{{ instagram_text }}</h3>
+			<div class="instagram-post">
+				{{ instagram_images }}
+				<div class="instagram-img" data-aos="zoom-in" data-aos-duration="1000">
+					<a href="{{ url }}" target="_blank">
+						{{ image }}<img src="{{ url }}"alt="">{{ /image }}
+					</a>
+				</div>
+				{{ /instagram_images }}
+
+			</div>
+		</div>
+		{{ /if }}
+		{{ /setting }}
+		<div class="socials-box" data-aos="fade-right" data-aos-duration="1000">
+			<h3 class="shop-title">Socials</h3>
+			<ul>
+				{{ setting }}
+				{{ if socials }}
+				{{ socials }}
+				<li><a href="{{ url }}" target="_blank"><i class="fa-brands fa-{{platform}}"></i></a></li>
+				{{ /socials }}
+				{{ /if }}
+				{{ /setting }}
+			</ul>
+		</div>
+	</div>
+</div>

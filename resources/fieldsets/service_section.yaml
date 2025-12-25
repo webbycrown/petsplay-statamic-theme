@@ -1,0 +1,34 @@
+title: 'Service Section'
+fields:
+  -
+    handle: sub_title
+    field:
+      default: 'Our Services'
+      type: text
+      display: 'Sub Title'
+  -
+    handle: collections
+    field:
+      max_items: 1
+      mode: select
+      type: collections
+      display: Collections
+  -
+    handle: pagination
+    field:
+      default: 'false'
+      type: text
+      display: Pagination
+  -
+    handle: limit
+    field:
+      default: '0'
+      type: integer
+      display: Limit
+  -
+    handle: side_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Side Image'

@@ -1,0 +1,40 @@
+<section class="about-detail-section">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-12">
+				<div class="about-detail-title-content custom-title-shape" data-aos="zoom-in" data-aos-duration="1000">
+					<h2 class="sub-title text-center">{{ section_title }}</h2>
+					<img class="sub_title_svg" src="{{ theme:asset }}assets/image/sub-title-shape.svg" alt="">
+				</div>
+			</div>
+			<div class="col-12 col-md-4">
+				<div class="about-detail-images" data-aos="zoom-in" data-aos-duration="1000">
+					{{ left_image }}<img src="{{ url }}" alt="">{{ /left_image }}
+				</div>
+			</div>
+			<div class="col-12 col-md-8">
+				<div class="about-detail-content-text">
+					<h3 data-aos="fade-up" data-aos-duration="1000">{{ main_heading }}</h3>
+					{{ detail_blocks }}
+					<div class="taxt-detail-wrapper" data-aos="fade-up" data-aos-duration="1000">
+						<div class="icon">
+							<img src="{{ theme:asset }}assets/image/about-detail-arrow.png" alt="">
+						</div>
+						<div class="text">
+							<h5>{{ title }}</h5>
+							<p>{{ description }}</p>
+						</div>
+					</div>
+					{{ /detail_blocks }}
+					{{ if button_text }}
+					<div class="about-detail-btn" data-aos="fade-up" data-aos-duration="1000">
+						<div class="btn-button">
+							<a href="{{ button_link }}" class="btn btn-primary">{{ button_text }}</a>
+						</div>
+					</div>
+					{{ /if }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

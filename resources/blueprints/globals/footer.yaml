@@ -1,0 +1,60 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: information_title
+            field:
+              default: Information
+              type: text
+              display: 'Information Title'
+          -
+            handle: information_links
+            field:
+              type: grid
+              display: 'Information Links'
+              fields:
+                -
+                  handle: name
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: url
+                  field:
+                    type: link
+                    display: 'Page URL'
+          -
+            handle: helpful_link_title
+            field:
+              default: 'Helpful Links'
+              type: text
+              display: 'Helpful Link Title'
+          -
+            handle: helpful_links
+            field:
+              type: grid
+              display: 'Helpful Links'
+              fields:
+                -
+                  handle: name
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: url
+                  field:
+                    type: link
+                    display: 'Page URL'
+          -
+            handle: newsletter_title
+            field:
+              type: text
+              display: 'Newsletter Title'
+          -
+            handle: copyright
+            field:
+              type: text
+              display: Copyright

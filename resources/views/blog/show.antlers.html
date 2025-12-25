@@ -1,0 +1,81 @@
+<section class="other-hero-section" {{ setting }}{{ inner_banner_image }}style="background-image:url( {{ url }});" {{ /inner_banner_image }}{{ /setting }}>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-0">
+                <div class="other-hero-content">
+                    <div class="container">
+                        <div class="other-title-content">
+                            <h1 class="title" data-aos="fade-right" data-aos-duration="1000">Blog Details</h1>
+                            <p data-aos="fade-up" data-aos-duration="1000"><a href="/">Home</a> 
+                                <span class="other-icon"><i class="fa-solid fa-angles-right"></i></span>
+                               <a href="/blogs">Blog</a> 
+                               {{ if title }}
+                                <span class="other-icon"><i class="fa-solid fa-angles-right"></i></span>
+                                <span>{{ title }}</span>
+                                {{ /if }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog-detail-page-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="blog-detail-page">
+                    <div class="blog-detail-img" data-aos="zoom-in" data-aos-duration="1000">
+                        {{ featured_image }}<img src="{{ url }}" alt="">{{ /featured_image }}
+                    </div>
+                    <div class="blog-deta-user" data-aos="fade-up" data-aos-duration="1000">
+                        <ul>
+                            <li class="blog-deta"><span class="icon"><i class="fa-regular fa-clock"></i></span><span class="deta">{{ publish_date format="d M Y" }}</span></li>
+                                <li class="user-nema"><span class="icon"><i class="fa-regular fa-user"></i></span><span class="nema">{{ author.title }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <h3 class="blog-detail-title" data-aos="fade-up" data-aos-duration="1000">{{ title }}</h3>
+                        {{ content }}
+                        {{ if paragraph }}
+                        <p data-aos="fade-up" data-aos-duration="1000">{{ paragraph }}</p>
+                        {{ /if }}
+
+                        {{ if quote_text }}
+                        <div class="quote-wrapper text-center" data-aos="zoom-in" data-aos-duration="1000">
+                            <div class="quote-left quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                            <p>{{ quote_text }}</p>
+                            <div class="quote-right quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                        </div>
+                        {{ /if }}
+                        {{ if items }}
+                        <ul class="expect-content" data-aos="fade-up" data-aos-duration="1000">
+                            {{ items }}
+                            <li><span class="dots"></span>{{ value }}</li>
+                            {{ /items }}
+                        </ul>
+                        {{ /if }}
+                        {{ /content }}
+
+                        {{ if category }}
+                        <div class="tags-wrapper" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="tags-icon">
+                                <i class="fa-solid fa-tags"></i>
+                            </div>
+                            <div class="tags-content">
+                                <ul>
+                                    {{ category }}
+                                    <li><a href="/blog/category/{{slug}}">{{ title }}</a></li>
+                                    {{ /category }}
+                                </ul>
+                            </div>
+                        </div>
+                        {{ /if }}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

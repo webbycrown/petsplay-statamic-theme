@@ -1,0 +1,98 @@
+<section class="other-hero-section" {{ setting }}{{ inner_banner_image }}style="background-image:url( {{ url }});" {{ /inner_banner_image }}{{ /setting }}>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-0">
+                <div class="other-hero-content">
+                    <div class="container">
+                        <div class="other-title-content">
+                            <h1 class="title" data-aos="fade-right" data-aos-duration="1000">{{ segment_2 | ucfirst }}</h1>
+                            <p data-aos="fade-up" data-aos-duration="1000"><a href="/">Home</a> 
+                                <span class="other-icon"><i class="fa-solid fa-angles-right"></i></span>
+                               <a href="/blog">Blog</a> 
+                               <span class="other-icon"><i class="fa-solid fa-angles-right"></i></span>
+                                <span>{{ segment_2 | ucfirst }}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog-page-section">
+    <div class="container">
+        <div class="row">
+            
+            {{ collection:blogs as="blogs" category:contains="{ category_slug }"  paginate="{pagination}" limit="{limit}" }}
+            <div class="col-12 grid_append">
+                {{ if blogs }}
+                    {{ blogs }}
+                    <div class="blog-box grid-item-append">
+                        <div class="blog-images-content" data-aos="zoom-in" data-aos-duration="1000">
+                            <div class="images-first-border">
+                                <div class="images-last-border">
+                                    <div class="blog-images">
+                                        <a href="{{ url }}">
+                                            {{ featured_image }}<img src="{{ url }}" alt="{{ title }}">{{ /featured_image }}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-text-content" data-aos="fade-up" data-aos-duration="1000">
+                            <h3 class="blog-title"><a href="{{ url }}">{{ title }}</a></h3>
+                            <div class="blog-deta-user">
+                                <ul>
+                                    <li class="blog-deta">
+                                        <span class="icon">
+                                            <i class="fa-regular fa-clock"></i>
+                                        </span>
+                                        <span class="deta">{{ publish_date format="d M Y" }}</span>
+                                    </li>
+                                    <li class="user-nema">
+                                        <span class="icon">
+                                            <i
+                                            class="fa-regular fa-user"></i>
+                                        </span>
+                                        <span class="nema">{{ author.title }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p>{{ short_description }}</p>
+                            {{ if button_text }}
+                            <div class="viewmore-btn">
+                                <a href="{{ url }}">{{ button_text }}</a>
+                            </div>
+                            {{ /if }}
+                        </div>
+                    </div>
+                    {{ /blogs }}
+                {{ else }}
+                    <div class="text-center py-10">
+                        <p class="text-red-500 text-lg">No blog posts found in this category.</p>
+                    </div>
+                {{ /if }}
+                
+            </div>
+
+            {{ paginate }}
+                <input type="hidden" class="lastPage" value="{{ total_pages }}">
+                <input type="hidden" class="currentPage" value="{{ current_page }}">
+                {{ if next_page }} 
+                <div class="load-more-wrap loader-btn-box" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="btn-button">
+                        <a href="{{ next_page }}" class="btn btn-primary ajax-load-more-grid">
+                            <img src="{{theme:asset}}assets/image/loading-spinner.svg" alt="loader" class="object-cover animate-spin d-none">
+                            Load More
+                        </a>
+                    </div>
+                </div>
+                {{ /if }}
+            {{ /paginate }} 
+            
+            {{ /collection:blogs }}
+            
+        </div>
+    </div>
+</section>

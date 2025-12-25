@@ -1,0 +1,22 @@
+title: 'Testimonials Section'
+fields:
+  -
+    handle: sub_title
+    field:
+      default: Testimonials
+      type: text
+      display: 'Sub Title'
+  -
+    handle: section_title
+    field:
+      default: 'What Our Clints Says !'
+      type: text
+      display: 'Section Title'
+  -
+    handle: testimonials
+    field:
+      mode: select
+      collections:
+        - testimonials
+      type: entries
+      display: Testimonials

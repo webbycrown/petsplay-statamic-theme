@@ -1,11 +1,11 @@
 ---
-id: c2394709-3f1b-4596-a8c6-bd4b505a7185
+id: 124c62b6-07d3-4122-b8b6-cbb0c2fc825a
 blueprint: page
-title: 'Sign In'
+title: Gallery
 author: e953c909-6804-4603-99f0-f1c770944d5c
+template: gallery
 show_hero_section: true
-section_title: 'Sign In'
 updated_by: e953c909-6804-4603-99f0-f1c770944d5c
-updated_at: 1763809779
-template: sign-in
+updated_at: 1766662661
+section_title: Gallery
 ---

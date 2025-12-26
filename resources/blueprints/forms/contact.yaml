@@ -5,10 +5,10 @@ tabs:
       -
         fields:
           -
-            handle: frist_name
+            handle: first_name
             field:
               type: text
-              display: 'Frist Name'
+              display: 'First Name'
               validate:
                 - required
           -

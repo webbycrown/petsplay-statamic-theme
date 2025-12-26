@@ -9,7 +9,7 @@ data:
     -
       id: mhyrolnc
       name: Gallery
-      url: /galleries
+      url: /gallery
     -
       id: mhyrouiv
       name: Team
@@ -22,23 +22,5 @@ data:
       id: mhyrpb0q
       name: 'Contact Us'
       url: /contact-us
-  helpful_link_title: 'Helpful Links'
-  helpful_links:
-    -
-      id: mhyrmdze
-      name: Services
-      url: /services
-    -
-      id: mhyrn4g9
-      name: Wishlist
-      url: /wishlist
-    -
-      id: mhyrnbi9
-      name: Cart
-      url: /cart
-    -
-      id: mhyro4a0
-      name: Checkout
-      url: /checkout
   newsletter_title: 'Subscribe Now'
   copyright: 'Copyright © 2025 Design & Developed by WebbyCrown'

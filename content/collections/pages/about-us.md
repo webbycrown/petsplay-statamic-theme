@@ -6,7 +6,7 @@ author: e953c909-6804-4603-99f0-f1c770944d5c
 show_hero_section: true
 section_title: About
 updated_by: e953c909-6804-4603-99f0-f1c770944d5c
-updated_at: 1766494057
+updated_at: 1766662764
 template: about
 page_builder:
   -
@@ -77,35 +77,35 @@ page_builder:
         enabled: true
         image: image/take-care-1.jpg
         title: Dogs
-        link: /galleries
+        link: /gallery
       -
         id: mi2z2wo0
         type: item
         enabled: true
         image: image/take-care-2.jpg
         title: Cats
-        link: /galleries
+        link: /gallery
       -
         id: mi2z39yv
         type: item
         enabled: true
         image: image/take-care-3.jpg
         title: Birds
-        link: /galleries
+        link: /gallery
       -
         id: mi2z3kkv
         type: item
         enabled: true
         image: image/take-care-4.jpg
         title: Rabbits
-        link: /galleries
+        link: /gallery
       -
         id: mi2z3u3q
         type: item
         enabled: true
         image: image/take-care-5.jpg
         title: Fish
-        link: /galleries
+        link: /gallery
     type: pets_we_take_care
     enabled: true
     section_title: 'Pets We Take Care'

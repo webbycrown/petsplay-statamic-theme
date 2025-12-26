@@ -1,6 +1,6 @@
 # PetsPlay - Statamic Starter Kit
 
-PetsPlay Statamic helps you build a modern pet care website without the hassle. Customizable sections for blogs, services, products, and eCommerce features let you focus on content, not complexity.
+At PetsPlay Statamic, we make it easy to build stunning websites with zero hassle. Our theme comes packed with customizable sections for blogs, services, products, and more so you can focus on content, not complexity.
 
 ## Pages of PetsPlay
 
@@ -15,10 +15,6 @@ PetsPlay Statamic helps you build a modern pet care website without the hassle. 
 - Gallery Page
 - Shop Page
 - Single Product Page
-- Cart Page
-- Checkout Page
-- Wishlist Page
-- Sign In and Sign up Page
 - Terms & Conditions Page
 - 404 Page
 
@@ -45,27 +41,9 @@ PetsPlay Statamic helps you build a modern pet care website without the hassle. 
   - Footer Settings
   - Product Page Settings
   - Social Share Settings
-  - Checkout Labels & Payment Methods
-  - Shipping Methods
 
   All labels and texts are editable—no code changes required.
 
-## eCommerce Features
-
-  - Product listing & single product pages
-  - Cart, checkout, and wishlist
-  - Multiple payment options:
-    - Cash on Delivery
-    - Razorpay
-    - Stripe
-  - Configurable shipping methods
-  - Empty cart messaging controls
-
-
-## Via Admin Panel
-
-1. Navigate to **Global > Product > Checkout** and activate the theme.
-2. Configure **Razorpay** and **Stripe** API keys in theme settings.
 
 ## Installation
 
@@ -93,8 +71,6 @@ statamic new my-site webbycrown/petsplay-statamic-theme
   - 🏗️ Full set of pages, sections, and layouts
   - 🛠️ Customizable global settings and forms
   - 📱 Responsive design
-  - 🛒 eCommerce features: product pages, cart, checkout, wishlist
-  - 💰 Multiple payment methods: Cash on Delivery, Razorpay, Stripe
 
 ---
 <div align="center">

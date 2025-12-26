@@ -8,7 +8,7 @@
                             <h1 class="title" data-aos="fade-right" data-aos-duration="1000">Single Product</h1>
                             <p data-aos="fade-up" data-aos-duration="1000"><a href="/">Home</a> <span
                                 class="other-icon"><i class="fa-solid fa-angles-right"></i></span>
-                                <a href="/shop">shop</a>
+                                <a href="/shop">Shop</a>
                                 {{ if title }}
                                 <span class="other-icon"><i class="fa-solid fa-angles-right"></i></span>
                                 <span>{{ title }}</span>
@@ -106,30 +106,6 @@
                                     </div>
                                 {{ /if }}
                                 
-                            </div>
-                            <div class="product-btn-content">
-                                {{ if stock != 0 }}
-                                {{ product_page }}
-
-
-                                
-                                {{ if cart_button_label }}
-                                <div class="cart-btn" data-aos="zoom-in" data-aos-duration="1000">
-                                    <div class="btn-button">
-                                        <a href="/cart" class="btn btn-primary add-to-cart" data-stock="{{ stock }}" data-slug="{{ slug }}" data-title="{{ title }}" data-quantity="1" data-short_description="{{ short_description }}" data-image="{{ featured_image }}" data-id="{{ id }}" data-price="{{ sale_price }}">{{ cart_button_label }}</a>
-                                    </div>
-                                </div>
-                                {{ /if }}
-
-                                <div class="buynow-btn" data-aos="zoom-in" data-aos-duration="1000">
-                                    <div class="btn-button">
-                                        <a href="/wishlist" data-stock="{{ stock }}" data-id="{{ id }}" data-title="{{ title }}" data-slug="{{ slug }}" data-short_description="{{ short_description }}" data-image="{{ featured_image }}" data-price="{{ sale_price }}" data-url="/product/{{ slug }}" data-status="{{ if stock > 0 }}In Stock{{ else }}Out of Stock{{ /if }}" class="btn btn-primary add-to-wishlist product-wishlist-btn">
-                                            <i class="fa-regular fa-heart"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                {{ /product_page }}
-                                {{ /if }}
                             </div>
                         </div>
                         <div class="single-product-images">

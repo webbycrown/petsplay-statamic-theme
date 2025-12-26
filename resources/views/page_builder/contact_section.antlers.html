@@ -47,8 +47,8 @@
 							<div class="form-row nema-wrapper">
 								{{ /if }}
 
-								<div class="col-12 col-md-6  form-field">
-									<div class="form-group">
+								<div class="col-12 col-md-6 ">
+									<div class="form-group form-field">
 
 										{{ if type == "textarea" }}
 										<textarea id="{{ handle }}" name="{{ handle }}" class="form-control"
@@ -57,9 +57,9 @@
 											}}</label>
 
 										{{ elseif handle == "package_id" }}
-										<select class="form-control" name="{{ handle }}" >
+										<select class="form-control" name="{{ handle }}" onclick="this.setAttribute('value', this.value);" value="">
 											<option value="">
-												{{ display }} select{{ if validate && validate contains='required' }}*{{ /if }}
+												
 											</option>
 
 											{{ collection:packages }}
@@ -68,6 +68,7 @@
 											</option>
 											{{ /collection:packages }}
 										</select>
+										<label>Package Select</label>
 
 										{{ else }}
 										<input type="{{ type == 'text' ? 'text' : type }}" id="{{ handle }}"

@@ -1205,4 +1205,61 @@ $(document).ready(function(){
         window.location.href = redirectUrl;
     });
   }); 
+
+   /* ===============================
+       CATEGORY ACCORDION READ MORE
+    =============================== */
+    const visibleCategoryCount = 5;
+    const $categoryItems = $('#categoryAccordion .accordion-item');
+    const $categoryBtn = $('#toggleAccordion');
+
+    if ($categoryItems.length > visibleCategoryCount) {
+        $categoryItems.slice(visibleCategoryCount).hide();
+        $categoryBtn.show();
+    } else {
+        $categoryBtn.hide();
+    }
+
+    $categoryBtn.on('click', function () {
+        const expanded = $(this).hasClass('expanded');
+
+        if (expanded) {
+            // Read Less
+            $categoryItems.slice(visibleCategoryCount).slideUp();
+            $(this).removeClass('expanded').text('Read More');
+        } else {
+            // Read More
+            $categoryItems.slideDown();
+            $(this).addClass('expanded').text('Read Less');
+        }
+    });
+
+
+    /* ===============================
+       COLOR FILTER READ MORE
+    =============================== */
+    const visibleColorCount = 5;
+    const $colorItems = $('#colorList li');
+    const $colorBtn = $('#toggleColors');
+
+    if ($colorItems.length > visibleColorCount) {
+        $colorItems.slice(visibleColorCount).hide();
+        $colorBtn.show();
+    } else {
+        $colorBtn.hide();
+    }
+
+    $colorBtn.on('click', function () {
+        const expanded = $(this).hasClass('expanded');
+
+        if (expanded) {
+            // Read Less
+            $colorItems.slice(visibleColorCount).slideUp();
+            $(this).removeClass('expanded').text('Read More');
+        } else {
+            // Read More
+            $colorItems.slideDown();
+            $(this).addClass('expanded').text('Read Less');
+        }
+    });
 });

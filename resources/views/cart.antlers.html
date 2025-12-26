@@ -33,7 +33,7 @@
                             				</div>
                             			</div>
                             		</td>
-                            		<td data-label="Quantity">
+                            		<td data-label="Quantity" class="quantity">
                             			<div class="quantity-form">
                                              {{ if stock == 0 }}
                                              <p class="out-of-stock">Out of Stock</p>
@@ -44,7 +44,11 @@
                                                  <input type="button" value="+" class="qtyplus plus" data-id="{{ product_id }}">
                                              </form>
                                              {{ /if }}
-                            			</div>
+
+                                            </div>
+                                            {{ if stock == 1 }}
+                                            <p>Only 1 item left</p>
+                                            {{ /if }}
                             		</td>
                                     <td data-label="Price" class="price-col">
                                         <h4>

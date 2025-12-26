@@ -27,7 +27,7 @@ tree:
       -
         id: 56911cb9-24e1-4501-bee4-a0cfe07aa92a
         title: Gallery
-        url: /galleries
+        url: /gallery
       -
         id: ba005c5c-ddfd-4722-b962-c152f1f74f23
         title: 'Error - 404'
@@ -58,18 +58,6 @@ tree:
         id: 0fc6c534-786f-47a5-b3a0-f34c2a39732f
         title: 'Single Product'
         url: /product/backpack-roller
-      -
-        id: 59a9a21b-8c90-4c8f-84ae-493375f7b4eb
-        title: 'Cart page'
-        url: /cart
-      -
-        id: c5bbca27-8fac-4969-bb6c-5fe621c9492a
-        title: Checkout
-        url: /checkout
-      -
-        id: e2b703b1-e6f0-4c6f-aa28-ff606fbfc792
-        title: Wishlist
-        url: /wishlist
   -
     id: 6d4d8727-fd28-43dd-8b5c-ff860d9f2f62
     title: 'Contact Us'

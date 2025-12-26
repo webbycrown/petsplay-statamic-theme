@@ -2,8 +2,6 @@ export_paths:
   - routes
   - content
   - app/Http
-  - app/Tags
-  - app/Services
   - resources/blueprints
   - resources/fieldsets
   - resources/forms

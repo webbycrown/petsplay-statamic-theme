@@ -1,9 +1,13 @@
 {
     "name": "webbycrown/petsplay-statamic-theme",
+    "type": "statamic-starter-kit",
+    "description": "A Statamic starter kit for pet care websites, featuring blogs, services, products, and eCommerce features for a complete pet care experience.",
+    "require": {
+        "statamic/cms": "*"
+    },
     "extra": {
         "statamic": {
-            "name": "Petsplay - Statamic Theme",
-            "description": "A Statamic starter kit for pet care websites, featuring blogs, services, products, and eCommerce features for a complete pet care experience."
+            "starter-kit": true
         }
     }
 }

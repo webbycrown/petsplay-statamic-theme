@@ -2,6 +2,11 @@
 
 At PetsPlay Statamic, we make it easy to build stunning websites with zero hassle. Our theme comes packed with customizable sections for blogs, services, products, and more so you can focus on content, not complexity.
 
+PetsPlay is a pet-care starter kit for groomers, trainers, and pet shops. Services, products, gallery, and team pages are managed from the Control Panel.
+
+**Live demo:** https://petsplay-statamic.webbydemo.in/  
+Control Panel: `/cp` — `admin@example.com` / `password`
+
 ## Pages of PetsPlay
 
 - Home Page 
@@ -17,6 +22,17 @@ At PetsPlay Statamic, we make it easy to build stunning websites with zero hassl
 - Single Product Page
 - Terms & Conditions Page
 - 404 Page
+
+## Collections
+
+- **Pages**: Site structure and static content.
+- **Services**: Grooming, training, and care offerings.
+- **Products**: Shop catalog with comments.
+- **Blogs**: Pet-care articles.
+- **Galleries**: Photo sets.
+- **Teams**: Staff profiles.
+- **Testimonials**: Client reviews.
+- **Packages**: Service packages.
 
 ## Features of PetsPlay
 
@@ -58,7 +74,7 @@ php please starter-kit:install webbycrown/petsplay-statamic-theme
 
 ### Installing via the Statamic CLI Tool
 
-If you have the [Statamic CLI Tool](https://github.com/statamic/cli) installed, create a new Statamic installation with Metalpeak in one command:
+If you have the [Statamic CLI Tool](https://github.com/statamic/cli) installed, create a new Statamic installation with PetsPlay in one command:
 
 ```bash
 statamic new my-site webbycrown/petsplay-statamic-theme

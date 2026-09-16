@@ -4,8 +4,7 @@ At PetsPlay Statamic, we make it easy to build stunning websites with zero hassl
 
 PetsPlay is a pet-care starter kit for groomers, trainers, and pet shops. Services, products, gallery, and team pages are managed from the Control Panel.
 
-**Live demo:** https://petsplay-statamic.webbydemo.in/  
-Control Panel: `/cp` — `admin@example.com` / `password`
+The shop cart is a **demo inquiry flow**. Checkout records a cash-on-delivery order request. There is no Stripe or Razorpay gateway in this kit and no card is charged.
 
 ## Pages of PetsPlay
 
@@ -79,7 +78,10 @@ If you have the [Statamic CLI Tool](https://github.com/statamic/cli) installed, 
 ```bash
 statamic new my-site webbycrown/petsplay-statamic-theme
 ```
-## 📊 Changelog
+
+See [THIRD_PARTY.md](THIRD_PARTY.md) for bundled front-end libraries, fonts, and sample imagery licences.
+
+## Changelog
 
 ### v1.0.0
 

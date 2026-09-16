@@ -64,7 +64,7 @@ class CartController
 
         $discount = 0;
         if ($coupon) {
-            $couponService = app(\WebbyCrown\CommerceSuite\Services\Coupons\CouponService::class);
+            $couponService = app(\App\Services\Coupons\CouponService::class);
             $discount      = $couponService->calculateDiscount($coupon, $subtotal);
         }
         session()->put('cart_discount', $discount);
@@ -123,7 +123,7 @@ class CartController
 
         // If coupon exists → recalculate discount based on new subtotal
         if ($coupon) {
-            $couponService = app(\WebbyCrown\CommerceSuite\Services\Coupons\CouponService::class);
+            $couponService = app(\App\Services\Coupons\CouponService::class);
             $discount      = $couponService->calculateDiscount($coupon, $subtotal);
         }
 
@@ -187,7 +187,7 @@ class CartController
         $coupon   = session()->get('cart_coupon');
         $discount = 0;
         if ($coupon) {
-            $couponService = app(\WebbyCrown\CommerceSuite\Services\Coupons\CouponService::class);
+            $couponService = app(\App\Services\Coupons\CouponService::class);
             $discount      = $couponService->calculateDiscount($coupon, $subtotal);
         }
         session()->put('cart_discount', $discount);

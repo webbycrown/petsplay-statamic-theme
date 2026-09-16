@@ -1262,4 +1262,70 @@ $(document).ready(function(){
             $(this).addClass('expanded').text('Read Less');
         }
     });
+
+    $(document).on('click', '.add-to-cart', function (e) {
+        e.preventDefault();
+        if (typeof cartAddUrl === 'undefined') {
+            return;
+        }
+        const $el = $(this);
+        $.post(cartAddUrl, {
+            product_id: $el.data('id'),
+            slug: $el.data('slug'),
+            title: $el.data('title'),
+            price: $el.data('price'),
+            quantity: $el.data('quantity') || 1,
+            image: $el.data('image'),
+            short_description: $el.data('short_description'),
+            stock: $el.data('stock'),
+            size: $el.data('size')
+        }).done(function () {
+            window.location.href = '/cart';
+        });
+    });
+
+    $(document).on('click', '.add-to-wishlist', function (e) {
+        e.preventDefault();
+        if (typeof wishlistAddUrl === 'undefined') {
+            return;
+        }
+        const $el = $(this);
+        $.post(wishlistAddUrl, {
+            product_id: $el.data('id'),
+            title: $el.data('title'),
+            image: $el.data('image'),
+            slug: $el.data('slug'),
+            short_description: $el.data('short_description'),
+            price: $el.data('price'),
+            url: $el.data('url'),
+            stock: $el.data('stock'),
+            size: $el.data('size')
+        });
+    });
+
+    $(document).on('click', '#placeOrderBtn', function (e) {
+        e.preventDefault();
+        if (typeof checkoutPlaceUrl === 'undefined') {
+            return;
+        }
+        $.post(checkoutPlaceUrl, {
+            name: $('#name').val(),
+            address: $('#address').val(),
+            city: $('#city').val(),
+            state: $('#state').val(),
+            zip: $('#zip').val(),
+            notes: $('#notes').val(),
+            products: $('.products').val(),
+            discount: $('#discount').val(),
+            s_charge: $('.s_charge').val(),
+            amount: $('.amount').val(),
+            payment_method: $('input[name="payment_method"]:checked').val() || 'cash-on-delivery'
+        }).done(function (res) {
+            if (res.status === true && res.redirect) {
+                window.location.href = res.redirect;
+                return;
+            }
+            $('#success-message').text(res.message || 'Could not place the order.');
+        });
+    });
 });

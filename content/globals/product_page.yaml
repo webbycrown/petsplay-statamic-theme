@@ -27,21 +27,7 @@ data:
     -
       id: micrkvfw
       payment_option: cash-on-delivery
-      description: 'Pay with cash upon delivery.'
-      type: new_set
-      enabled: true
-    -
-      id: mih2fllr
-      payment_option: razorpay
-      key_id: rzp_test_gQKzOhDpTlvDFb
-      key_secret: 4l1PGOJO4053RxLftu3cBJrf
-      type: new_set
-      enabled: true
-    -
-      id: mih2g8t2
-      payment_option: stripe
-      key_id: pk_test_51QsLdSKuWco7NN3KLOvOJWIDzefR4yWi1BU1dX1QkP0F9xljaEjsa0SB76Pixc3NurHx3KsijkAFln9kwkTEUyLJ00BW2HitOJ
-      key_secret: sk_test_51QsLdSKuWco7NN3KNSqfLYtqT0KWaGgn2mKmUHbB77FEbssbswDIfKsFPpuAGRbI39iHzZE97H0TLIdAwP7099EJ00klOQRLuP
+      description: 'Pay with cash upon delivery. This is a demo inquiry — no card is charged.'
       type: new_set
       enabled: true
   button_text: 'Place Order'
